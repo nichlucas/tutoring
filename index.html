@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Nicholas Lucas</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --oxford-blue: #002147;
+            --cambridge-blue: #A3C1AD;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --glass-white: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7; 
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 100;
+            color: var(--oxford-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+
+        h2 {
+            padding-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .header-top {
+            display: flex;
+            /* Changed to row to keep pic on left, while text container stacks */
+            flex-direction: row; 
+            align-items: center;
+            gap: 30px;
+            padding-bottom: 30px;
+        }
+
+        .profile-pic {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+        }
+
+        /* This container handles the vertical stacking of your name/credentials */
+        .header-text {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+        }
+
+        .header-text h1, .header-text h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab-link {
+            text-decoration: none;
+            padding: 2px 25px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--oxford-blue);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        .active-tab {
+            background: rgba(163, 193, 173, 0.2);
+            border-top: 1px solid var(--oxford-blue);
+        }
+
+        .contact-card {
+            background: var(--oxford-blue);
+            color: white;
+            padding: 40px 20px 20px 40px; 
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 500px;
+        }
+
+        .contact-card a {
+            color: var(--cambridge-blue);
+            text-decoration: none;
+        }
+
+        .contact-card p {
+            margin: 0; 
+            padding: 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+/* Mobile Adaptations */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column !important; /* Stacks photo on top of name */
+        text-align: center;
+        gap: 15px;
+    }
+
+    .header-text h1 {
+        font-size: 1.8rem; /* Slightly smaller name for mobile screens */
+    }
+
+    .nav-tabs {
+        flex-direction: column; /* Stacks Home/Research tabs vertically */
+        gap: 5px;
+    }
+
+    .tab-link {
+        width: 100%; /* Makes tabs full-width buttons for easier tapping */
+        padding: 12px 0;
+        text-align: center;
+        border: 1px solid #eee;
+    }
+
+    .wrapper {
+        padding: 20px 15px; /* Reduces side padding so text isn't too narrow */
+    }
+
+    .contact-card {
+        padding: 30px 15px; /* Slightly tighter padding for small screens */
+    }
+}
+
+.ampel-link {
+    text-decoration: none; /* Removes the default blue underline */
+    color: inherit;       /* Keeps it the same color as the surrounding text */
+    transition: 0.2s;     /* Makes the underline appear smoothly */
+}
+
+.ampel-link:hover {
+    text-decoration: underline; /* Adds the underline only on hover */
+    color: inherit;            /* Guarantees the color doesn't change to blue */
+}
+
+.inquiry-container {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.inquiry-button {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--oxford-blue);
+    color: #ffffff;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--oxford-blue);
+}
+
+.inquiry-button:hover {
+    background-color: transparent;
+    color: var(--oxford-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+    .availability-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.availability-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.status-circle {
+    width: 10px;
+    height: 10px;
+    background-color: #2ecc71; /* Emerald Green */
+    border: 0.5px solid #000;    /* Thin black border */
+    border-radius: 50%;
+    display: inline-block;
+    /* Soft static glow */
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.8); 
+    animation: gentle-glow 2s ease-in-out infinite;
+}
+
+@keyframes gentle-glow {
+    0%, 100% {
+        box-shadow: 0 0 3px rgba(46, 204, 113, 0.4);
+        filter: brightness(1);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(46, 204, 113, 0.9);
+        filter: brightness(1.2);
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <div class="header-top">
+            <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="profile-pic">
+            <div class="header-text">
+                <h1>Nicholas Lucas</h1>
+                <h3>PhD (Cambridge Uni.), BASc | Computational Metallurgy, Materials and Petrology</h3>
+                <h3>Postdoctoral Researcher at <a href="https://ampel.ubc.ca/" class="ampel-link">AMPEL</a>, UBC</h3>
+            </div>
+        </div>
+        
+        <nav class="nav-tabs">
+            <a href="index.html" class="tab-link active-tab">Home</a>
+            <a href="research.html" class="tab-link">Research</a>
+            <a href="cv.html" class="tab-link">CV</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Academic Mentorship and Premium Tutoring</h2>
+        <p>My tutoring experience primarily comes from my time as a PhD researcher at the University of Cambridge (2021-2025), where I worked with over 100 undergraduate students in tutorials, laboratory sessions and during field studies. I provided small-group "supervisions"&mdash;a hallmark of the Oxbridge system&mdash;designed for personalized guidance, foster deep subject understanding, and develop critical thinking beyond the core lecture material. I have helped students falling behind and those already excelling, and I've learned a lot in the process.
+        <div>
+        <p>I provide premium tutoring up to the undergraduate level as well as university admissions coaching and interview preparation. Whether you're falling behind, reaching for top grades or just needing some guidance, I can help you. I'm currently accepting in-person clients in Vancouver (Kitsilano/UBC) and worldwide via Zoom.</p>
+        </div>
+        <h3>Subjects</h3>
+        <ul>
+            <li>AP/IB/Undergraduate Physics, Chemistry, Vectors and Calculus, Earth Sciences</li>
+            <li>Specialized help with Thermodynamics and Phase Equilibria, Geology, Metallurgy </li>
+            <li>Interview and admissions coaching</li>
+            <li>Feedback on written work in science/engineering</li>
+        </ul>
+        <h3>Key Information</h3>
+        <ul>
+            <li>Free 15 minute consultation</li>
+            <li><strong>Sessional rate</strong>: $100/hr</li>
+            <li><strong>5-hour bundle</strong>: $95/hr ($475)</li>
+            <li><strong>10-hour bundle</strong>: $90/hr ($900)</li>
+            <li><strong>20-hour bundle</strong>: $80/hr ($1600)</li>        
+            <li><strong>Delivery</strong>: in person at the University of British Columbia or over Zoom/Teams; in-home visits are possible for +$30/session</li>
+        </ul>
+<p class="availability-status">
+    Availability: <strong>Open</strong> <span class="status-circle"></span>
+</p>
+    </section>
+
+    <div class="inquiry-container">
+            <a href="mailto:nandlucas99@gmail.com?subject=Tutoring Inquiry" class="inquiry-button">
+            Book a Consultation
+    </a>
+    </div>
+
+    <div class="contact-card">
+        <p style="font-weight: bold; margin-bottom: 10px;">Contact Information</p>
+        <p>Email: <a href="mailto:nandlucas99@gmail.com">nandlucas99@gmail.com</a></p>
+        <p>Phone: <a href="tel:+16138160059">+1 (613) 816-0059</a></p>
+    </div>
+</div>
+
+</body>
+</html>
