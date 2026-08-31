@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Dr. Nicholas Lucas</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --oxford-blue: #002147;
+            --cambridge-blue: #A3C1AD;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 100;
+            color: var(--oxford-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+
+        h2 {
+            padding-bottom: 0px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .cv-section {
+            margin-bottom: 25px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        .publication {
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .publication em {
+            color: var(--oxford-blue);
+        }
+
+        .pub-link {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        .pub-link:hover {
+            font-weight: bold;
+            color: inherit;
+        }
+
+        .experience-entry {
+            margin-bottom: 30px;
+        }
+        
+        .all-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-weight: 500;
+            color: var(--oxford-blue);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+         .all-sub {
+            display: flex;
+            justify-content: space-between;
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 0px;
+        }
+
+        .experience-entry ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .all-header, .all-sub, .experience-header {
+                flex-direction: column;
+            }
+        }
+
+        .contact-card {
+            background: var(--oxford-blue);
+            color: white;
+            padding: 40px 20px 20px 40px; 
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .contact-card a {
+            color: var(--cambridge-blue);
+            text-decoration: none;
+        }
+
+        .contact-card p {
+            margin: 0; 
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <h2>Education</h2>
+    <div class="cv-section">
+        <div class="all-header">
+            <span>Doctor of Philosophy in Earth Sciences</span>
+            <span>2021–2025</span>
+        </div>
+        <div class="all-sub">
+            <span>University of Cambridge, UK</span>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <div class="all-header">
+            <span>Bachelor of Applied Science, Geological Engineering</span>
+            <span>2017–2021</span>
+        </div>
+        <div class="all-sub">
+            <span>Queen’s University, Kingston, Ontario, Canada</span>
+        </div>
+    </div>
+
+    <section>
+        <h2>Work Experience</h2>
+        <div class="experience-entry">
+            <div class="all-header">
+                <span>Postdoctoral Research Fellow</span>
+                <span>April 2026 – Present</span>
+            </div>
+            <div class="all-sub">University of British Columbia, Canada</div>
+            <ul>
+                <li>Studying the mechanisms of the bainite phase transformation in steel via phase field modelling methods.</li>
+            </ul>
+        </div>
+            
+        <div class="experience-entry">
+            <div class="all-header">
+                <span>Doctoral Researcher</span>
+                <span>2021 – 2025</span>
+            </div>
+            <div class="all-sub">University of Cambridge, UK</div>
+            <ul>
+                <li>Applied advanced thermodynamic techniques to determine how hot a mountain range was during its formation one billion years ago, highlighting issues with decades of thinking.</li>
+                <li>Published lead-author paper in a high-impact journal, overturning decades-old assumptions regarding a globally occurring geological processes relating to mountain building (doi: 10.1111/jmg.12801).</li>
+            </ul>
+        </div>
+
+        <div class="experience-entry">
+            <div class="all-header">
+                <span>Undergraduate Supervisor</span>
+                <span>2021 – 2024</span>
+            </div>
+            <div class="all-sub">University of Cambridge, UK</div>
+            <ul>
+                <li>Taught three laboratory sessions per week (30 to 40 students) for first- and second-year Earth Sciences courses.</li>
+                <li>Supervised first to third-year students (1 to 4 per group) for up to 5 hours per week.</li>
+            </ul>
+        </div>
+
+        <div class="experience-entry">
+            <div class="all-header">
+                <span>Operations Engineering Intern</span>
+                <span>May – Aug 2019</span>
+            </div>
+            <div class="all-sub">Ovintiv Inc., Alberta, Canada</div>
+            <ul>
+                <li>Led and supported various projects aimed at reducing operational risks for pipelines and natural gas and liquids processing facilities.</li>
+            </ul>
+        </div>
+    </section>
+
+    <h2>Awards & Grants</h2>
+    <div class="cv-section">
+        <ul>
+            <li>Teck CCSF Scholarship, Canadian Centennial Scholarship Fund (2022)</li>
+            <li>Dean’s Scholar, Faculty of Engineering and Applied Science (2017–2021)</li>
+            <li>David Woeller Scholarship for academic excellence in geotechnical engineering (2020)</li>
+            <li>J. Allan Donaldson Prize for research on Precambrian geology (2020)</li>
+            <li>J. J. Denny Memorial Scholarship for academic excellence in geological engineering (2019)</li>
+        </ul>
+        <p><strong>PhD Fieldwork & Laboratory Grants Recipient:</strong></p>
+        <ul>
+            <li>Leave to Work Away Research Fund, Cambridge (£3130)</li>
+            <li>Research Grant, Geological Society of London (£1500)</li>
+            <li>Research Grant, Edinburgh Geological Society (£1000)</li>
+        </ul>
+    </div>
+
+    <h2>Publications</h2>
+    <div class="cv-section">
+        <div class="publication">
+            <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jmg.12801" class="pub-link">Lucas, N., Weller, O., Copley, A., Mottram, C., Chapman, G. and McMahon, W. (2025), The Diverse Habitats of Eclogite Formation: Insights From the Mesoproterozoic Glenelg Inlier, Scotland. J Metamorph Geol, 43: 97-122. https://doi.org/10.1111/jmg.12801</a>.
+        </div>
+        <div class="publication">
+            Lucas, N., Weller, O., St-Onge, M., Copley, A. (in prep.), Not all orogenic interiors melt equally: the effects of H<sub>2</sub>O availability and metamorphic P-T conditions across a mid-crustal thermal plateau in the Mesoproterozoic Grenville orogen, Canada.
+        </div>
+        <div class="publication">
+            Lucas, N., Copley, A. (in prep.), Thermal architecture of the Mesoproterozoic Grenville orogen in Canada reconsidered.
+        </div>
+    </div>
+
+    <h2>Relevant Skills</h2>
+    <div class="cv-section">
+        <ul>
+            <li><strong>Microscopy:</strong> SEM (BSE/SE), EPMA, TEM, LA-ICP-MS</li>
+            <li><strong>Software:</strong> MATLAB, Python, HTML, LaTeX, Theriak-Domino, THERMOCALC, MICRESS</li>
+            <li><strong>Languages:</strong> English, French (proficient)</li>
+        </ul>    
+    </div>
+    
+    <div class="contact-card">
+        <p style="font-weight: bold; margin-bottom: 10px;">Contact Information</p>
+        <p>Email: <a href="mailto:nandlucas99@gmail.com">nandlucas99@gmail.com</a></p>
+        <p>Phone: <a href="tel:+16138160059">+1 (613) 816-0059</a></p>
+    </div>
+    
+</div>
+
+</body>
+</html>
