@@ -39,14 +39,19 @@
             width: 100%;
         }
 
+        /* MASTER GRID WRAPPER - Aligns everything to the same vertical lines */
+        .wrapper {
+            max-width: 1050px; 
+            margin: 0 auto;
+            padding: 0 40px; 
+        }
+
         /* Top Bar styling */
         .top-nav-bar {
-            padding: 15px 40px; 
+            padding: 30px 0 10px 0; 
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px; 
-            margin: 0 auto;
         }
 
         .site-title h1 {
@@ -59,12 +64,12 @@
 
         .nav-tabs {
             display: flex;
-            gap: 10px; 
+            gap: 15px; 
         }
 
         .tab-link {
             text-decoration: none;
-            padding: 6px 12px; 
+            padding: 6px 14px; 
             font-size: 0.85rem; 
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -82,18 +87,12 @@
             border-color: #ffffff; 
         }
 
-        .wrapper {
-            max-width: 1000px; 
-            margin: 0 auto;
-            padding: 20px 20px 100px 20px;
-        }
-
-        /* Hero Layout Section - Adjusted for flush image and thicker top */
+        /* Hero Layout Section */
         .swapped-layout-section {
             display: flex;
             align-items: flex-end; /* Forces the image to the bottom edge */
             gap: 40px;
-            padding: 80px 0 0 0; /* 80px top padding for thickness, 0px bottom */
+            padding: 40px 0 0 0; 
         }
 
         .layout-content-left {
@@ -101,7 +100,8 @@
             display: flex;
             flex-direction: column;
             color: #ffffff; 
-            padding-bottom: 50px; /* Keeps text visually centered rather than hugging the bottom */
+            align-self: center; /* Centers the text vertically next to the tall image */
+            padding-bottom: 30px; 
         }
 
         .layout-content-left h2 {
@@ -134,6 +134,14 @@
             background-color: #ffffff;
             color: var(--oxford-blue);
             border: 2px solid #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
         .layout-content-left .inquiry-button:hover {
@@ -147,6 +155,9 @@
             margin-bottom: 0px; 
             justify-content: flex-start;
             color: #ffffff; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .layout-image-right {
@@ -155,37 +166,40 @@
             justify-content: center;
         }
         
-        /* Profile Picture - Border removed, flat bottom corners */
+        /* Swapped Profile Picture in Hero */
         .hero-profile-pic {
-            height: 400px;
-            width: 400px;
+            height: 350px; /* Increased slightly to balance the large text */
+            width: auto; /* Lets width scale automatically */
             object-fit: cover;
-            border-radius: 5px 5px 0 0; /* Keeps top rounded, makes bottom perfectly flat */
-            display: block; /* Removes weird inline-block whitespace gaps */
+            border-radius: 5px 5px 0 0; 
+            display: block; 
         }
 
-        /* Graph & Testimonial Section - Tightened gap */
+        /* Swapped Graph & Testimonial Section */
         .graph-testimonial-section {
             display: flex;
             align-items: center;
-            gap: 40px;
-            padding: 10px 0 40px 0; /* Reduced top padding to 20px */
-            margin-top: 0px; /* Margin removed completely */
+            gap: 60px; /* Increased gap so they don't look crowded */
+            padding: 60px 0 40px 0; 
+            margin-top: 0px; 
         }
 
         .graph-container {
-            flex: 0 0 auto;
+            flex: 1; /* Giving flex 1 balances visual weight with the testimonial */
+            display: flex;
+            justify-content: flex-start;
         }
 
+        /* Graph Iframe settings */
         .graph-container iframe {
             max-width: 100%;
             border-radius: 5px;
         }
 
         .testimonial-container {
-            flex: 1;
+            flex: 1; /* Match graph flex to ensure equal spacing */
             background: #f9f9f9;
-            padding: 20px;
+            padding: 30px;
             border-left: 4px solid var(--cambridge-blue);
             border-radius: 5px;
         }
@@ -198,13 +212,14 @@
         }
 
         .testimonial-container p.author {
-            font-weight: 400;
+            font-weight: 700;
             color: var(--oxford-blue);
             margin: 0;
         }
 
         .main-content-body {
-            padding-top: 10px;
+            padding-top: 20px;
+            padding-bottom: 60px;
         }
 
         .contact-card {
@@ -234,8 +249,8 @@
 @media (max-width: 768px) {
     .top-nav-bar {
         flex-direction: column;
-        padding: 15px;
-        gap: 10px;
+        padding: 20px 0;
+        gap: 15px;
     }
 
     .site-title h1 {
@@ -249,7 +264,7 @@
 
     .swapped-layout-section {
         flex-direction: column;
-        padding: 40px 20px 0 20px; /* Keep bottom 0 on mobile too */
+        padding: 40px 0 0 0; 
         text-align: center;
         gap: 30px;
     }
@@ -262,7 +277,7 @@
     .layout-content-left {
         text-align: center;
         align-items: center;
-        padding-bottom: 40px; /* Spacing for bottom of blue box on mobile */
+        padding-bottom: 40px; 
     }
 
     .layout-content-left h2 {
@@ -281,32 +296,18 @@
     .graph-testimonial-section {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
+        padding: 40px 0;
+    }
+    
+    .graph-container {
+        justify-content: center;
     }
 
     .testimonial-container {
         border-left: none;
         border-top: 4px solid var(--cambridge-blue);
     }
-}
-
-.inquiry-button {
-    display: inline-block;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 15px 35px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.availability-status {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 1rem;
 }
 
 .status-circle {
@@ -332,16 +333,18 @@
 <body>
 
     <div class="blue-header-background">
-        <header class="top-nav-bar">
-            <div class="site-title">
-                <h1>Nick Lucas, PhD</h1>
-            </div>
-            <nav class="nav-tabs">
-                <a href="index.html" class="tab-link active-tab">Home</a>
-                <a href="research.html" class="tab-link">Research</a>
-                <a href="cv.html" class="tab-link">CV</a>
-            </nav>
-        </header>
+        <div class="wrapper">
+            <header class="top-nav-bar">
+                <div class="site-title">
+                    <h1>Nick Lucas, PhD</h1>
+                </div>
+                <nav class="nav-tabs">
+                    <a href="index.html" class="tab-link active-tab">Home</a>
+                    <a href="research.html" class="tab-link">Research</a>
+                    <a href="cv.html" class="tab-link">CV</a>
+                </nav>
+            </header>
+        </div>
 
         <div class="wrapper" style="padding-top: 0; padding-bottom: 0;">
             <section class="swapped-layout-section">
