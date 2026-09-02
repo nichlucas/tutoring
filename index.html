@@ -13,7 +13,8 @@
             --cambridge-blue: #A3C1AD;
             --text-dark: #333333;
             --text-light: #666666;
-            --glass-white: rgba(0, 29, 219, 0.8);
+            /* Updated to use the translucent blue for the header background */
+            --header-bg: rgba(0, 29, 219, 0.8); 
         }
 
         body {
@@ -33,10 +34,12 @@
             margin-bottom: 0.5em;
         }
 
-        h1 {
-            font-size: 2rem;
+        /* Restyled h1 for the top navigation */
+        .site-title h1 {
+            font-size: 1.8rem;
             letter-spacing: -1px;
             margin: 0;
+            color: #ffffff; /* White text on blue header */
         }
 
         h2 {
@@ -44,71 +47,73 @@
             font-size: 1.4rem;
         }
 
-        h3 {
-            font-size: 1rem;
+        /* Hero text needs specific coloring on white background */
+        .hero-text-content h3 {
+            font-size: 1.2rem;
             color: var(--text-light);
+            margin-top: 0;
+            font-weight: 400;
+        }
+
+        /* Top Navigation Bar */
+        .top-nav-bar {
+            background-color: var(--header-bg);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .wrapper {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px 20px 40px 20px;
         }
 
-        header {
+        /* Hero Section (below top header) */
+        .hero-section {
             display: flex;
-            flex-direction: column;
-            margin-bottom: 100px; /* 20 */
-            color: var(--glass-white);
-            border-bottom: 2px solid #eee;
-        }
-
-        .header-top {
-            display: flex;
-            /* Changed to row to keep pic on left, while text container stacks */
-            flex-direction: row; 
             align-items: center;
-            gap: 30px;
-            padding-bottom: 30px;
-        }
-
-        /* This container handles the vertical stacking of your name/credentials */
-        .header-text {
-            display: flex;
-            flex-direction: column; 
-            justify-content: center;
-        }
-
-        .header-text h1, .header-text h3 {
-            margin: 0;
-            padding: 0;
+            gap: 40px;
+            padding: 60px 0;
+            background-color: #ffffff;
         }
 
         .profile-pic {
-            height: 300px;
-            width: 300px;
+            height: 250px;
+            width: 250px;
             object-fit: cover;
+            border-radius: 5px;
         }
 
+        /* Navigation Links in the blue header */
         .nav-tabs {
             display: flex;
-            gap: 10px;
+            gap: 20px;
         }
 
         .tab-link {
             text-decoration: none;
-            padding: 2px 25px;
+            padding: 8px 15px;
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--oxford-blue);
+            color: #ffffff; /* White text on blue background */
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
+            transition: 0.3s;
         }
 
+        /* Active tab style on blue background */
         .active-tab {
-            background: rgba(163, 193, 173, 0.2);
-            border-top: 1px solid var(--oxford-blue);
+            color: var(--oxford-blue);
+            background: #ffffff;
+            border-radius: 4px;
+        }
+
+        .main-content-body {
+            border-top: 1px solid #eee;
+            padding-top: 40px;
         }
 
         .contact-card {
@@ -117,7 +122,7 @@
             padding: 40px 20px 20px 40px; 
             border-radius: 15px;
             text-align: center;
-            margin-top: 500px;
+            margin-top: 80px;
         }
 
         .contact-card a {
@@ -136,46 +141,33 @@
 
 /* Mobile Adaptations */
 @media (max-width: 768px) {
-    .header-top {
-        flex-direction: column !important; /* Stacks photo on top of name */
-        text-align: center;
+    /* Top Bar stacked */
+    .top-nav-bar {
+        flex-direction: column;
+        padding: 20px;
         gap: 15px;
     }
 
-    .header-text h1 {
-        font-size: 1.8rem; /* Slightly smaller name for mobile screens */
+    .site-title h1 {
+        font-size: 1.6rem;
     }
 
     .nav-tabs {
-        flex-direction: column; /* Stacks Home/Research tabs vertically */
-        gap: 5px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Hero section stacked */
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 0;
+        text-align: center;
+        gap: 20px;
     }
 
     .tab-link {
-        width: 100%; /* Makes tabs full-width buttons for easier tapping */
-        padding: 12px 0;
-        text-align: center;
-        border: 1px solid #eee;
+        padding: 10px 15px;
     }
-
-    .wrapper {
-        padding: 20px 15px; /* Reduces side padding so text isn't too narrow */
-    }
-
-    .contact-card {
-        padding: 30px 15px; /* Slightly tighter padding for small screens */
-    }
-}
-
-.ampel-link {
-    text-decoration: none; /* Removes the default blue underline */
-    color: inherit;       /* Keeps it the same color as the surrounding text */
-    transition: 0.2s;     /* Makes the underline appear smoothly */
-}
-
-.ampel-link:hover {
-    text-decoration: underline; /* Adds the underline only on hover */
-    color: inherit;            /* Guarantees the color doesn't change to blue */
 }
 
 .inquiry-container {
@@ -206,20 +198,13 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-    .availability-status {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 1rem;
-    margin-top: 20px;
-}
-
 .availability-status {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     font-size: 1rem;
+    margin-top: 15px;
 }
 
 .status-circle {
@@ -248,16 +233,11 @@
 </head>
 <body>
 
-<div class="wrapper">
-    <header>
-        <div class="header-top">
-            <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="profile-pic">
-            <div class="header-text">
-                <h1>Academic mentorship and premium tutoring</h1>
-                <h3>I can help you reach your full potential in academics</h3>
-            </div>
+    <!-- TOP HEADER BAR -->
+    <header class="top-nav-bar">
+        <div class="site-title">
+            <h1>Academic mentorship and premium tutoring</h1>
         </div>
-        
         <nav class="nav-tabs">
             <a href="index.html" class="tab-link active-tab">Home</a>
             <a href="research.html" class="tab-link">Research</a>
@@ -265,44 +245,58 @@
         </nav>
     </header>
 
-    <section>
-        <h2>Academic Mentorship and Premium Tutoring</h2>
-        <p>My tutoring experience primarily comes from my time as a PhD researcher at the University of Cambridge (2021-2025), where I worked with over 100 undergraduate students in tutorials, laboratory sessions and during field studies. I provided small-group "supervisions"&mdash;a hallmark of the Oxbridge system&mdash;designed for personalized guidance, foster deep subject understanding, and develop critical thinking beyond the core lecture material. I have helped students falling behind and those already excelling, and I've learned a lot in the process.
-        <div>
-        <p>I provide premium tutoring up to the undergraduate level as well as university admissions coaching and interview preparation. Whether you're falling behind, reaching for top grades or just needing some guidance, I can help you. I'm currently accepting in-person clients in Vancouver (Kitsilano/UBC) and worldwide via Zoom.</p>
+<div class="wrapper">
+    
+    <!-- HERO SECTION (Pic and Status) -->
+    <section class="hero-section">
+        <!-- CRUCIAL: Changed .JPG to .jpg to fix GitHub loading issue -->
+        <img src="profile-pic.jpg" alt="Dr. Nicholas Lucas" class="profile-pic">
+        <div class="hero-text-content">
+            <h3>I can help you reach your full potential in academics</h3>
+            <p class="availability-status">
+                Availability: <strong>Open</strong> <span class="status-circle"></span>
+            </p>
         </div>
-        <h3>Subjects</h3>
-        <ul>
-            <li>AP/IB/Undergraduate Physics, Chemistry, Vectors and Calculus, Earth Sciences</li>
-            <li>Specialized help with Thermodynamics and Phase Equilibria, Geology, Metallurgy </li>
-            <li>Interview and admissions coaching</li>
-            <li>Feedback on written work in science/engineering</li>
-        </ul>
-        <h3>Key Information</h3>
-        <ul>
-            <li>Free 15 minute consultation</li>
-            <li><strong>Sessional rate</strong>: $100/hr</li>
-            <li><strong>5-hour bundle</strong>: $95/hr ($475)</li>
-            <li><strong>10-hour bundle</strong>: $90/hr ($900)</li>
-            <li><strong>20-hour bundle</strong>: $80/hr ($1600)</li>        
-            <li><strong>Delivery</strong>: in person at the University of British Columbia or over Zoom/Teams; in-home visits are possible for +$30/session</li>
-        </ul>
-<p class="availability-status">
-    Availability: <strong>Open</strong> <span class="status-circle"></span>
-</p>
     </section>
 
-    <div class="inquiry-container">
-            <a href="mailto:nandlucas99@gmail.com?subject=Tutoring Inquiry" class="inquiry-button">
-            Book a Consultation
-    </a>
-    </div>
+    <!-- MAIN BODY CONTENT -->
+    <main class="main-content-body">
+        <section>
+            <h2>Academic Mentorship and Premium Tutoring</h2>
+            <p>My tutoring experience primarily comes from my time as a PhD researcher at the University of Cambridge (2021-2025), where I worked with over 100 undergraduate students in tutorials, laboratory sessions and during field studies. I provided small-group "supervisions"&mdash;a hallmark of the Oxbridge system&mdash;designed for personalized guidance, foster deep subject understanding, and develop critical thinking beyond the core lecture material. I have helped students falling behind and those already excelling, and I've learned a lot in the process.
+            <div>
+            <p>I provide premium tutoring up to the undergraduate level as well as university admissions coaching and interview preparation. Whether you're falling behind, reaching for top grades or just needing some guidance, I can help you. I'm currently accepting in-person clients in Vancouver (Kitsilano/UBC) and worldwide via Zoom.</p>
+            </div>
+            <h3>Subjects</h3>
+            <ul>
+                <li>AP/IB/Undergraduate Physics, Chemistry, Vectors and Calculus, Earth Sciences</li>
+                <li>Specialized help with Thermodynamics and Phase Equilibria, Geology, Metallurgy </li>
+                <li>Interview and admissions coaching</li>
+                <li>Feedback on written work in science/engineering</li>
+            </ul>
+            <h3>Key Information</h3>
+            <ul>
+                <li>Free 15 minute consultation</li>
+                <li><strong>Sessional rate</strong>: $100/hr</li>
+                <li><strong>5-hour bundle</strong>: $95/hr ($475)</li>
+                <li><strong>10-hour bundle</strong>: $90/hr ($900)</li>
+                <li><strong>20-hour bundle</strong>: $80/hr ($1600)</li>         
+                <li><strong>Delivery</strong>: in person at the University of British Columbia or over Zoom/Teams; in-home visits are possible for +$30/session</li>
+            </ul>
+        </section>
 
-    <div class="contact-card">
-        <p style="font-weight: bold; margin-bottom: 10px;">Contact Information</p>
-        <p>Email: <a href="mailto:nandlucas99@gmail.com">nandlucas99@gmail.com</a></p>
-        <p>Phone: <a href="tel:+16138160059">+1 (613) 816-0059</a></p>
-    </div>
+        <div class="inquiry-container">
+                <a href="mailto:nandlucas99@gmail.com?subject=Tutoring Inquiry" class="inquiry-button">
+                Book a Consultation
+        </a>
+        </div>
+
+        <div class="contact-card">
+            <p style="font-weight: bold; margin-bottom: 10px;">Contact Information</p>
+            <p>Email: <a href="mailto:nandlucas99@gmail.com">nandlucas99@gmail.com</a></p>
+            <p>Phone: <a href="tel:+16138160059">+1 (613) 816-0059</a></p>
+        </div>
+    </main>
 </div>
 
 </body>
