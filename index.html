@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick Lucas, PhD | Tutoring</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -47,7 +47,7 @@
         /* --- WHITE NAVBAR --- */
         .white-nav-bar {
             background-color: #ffffff;
-            padding: 10px 0; 
+            padding: 6px 0; /* Slimmed down padding */
             box-shadow: 0 4px 20px rgba(0, 33, 71, 0.04);
             position: relative;
             z-index: 10;
@@ -60,16 +60,16 @@
         }
 
         .site-title h1 {
-            font-size: 1.3rem;
-            letter-spacing: -0.5px;
+            font-size: 1.25rem;
+            letter-spacing: -0.3px;
             color: var(--oxford-blue); 
-            font-weight: 700; 
+            font-weight: 500; /* Reduced from bold */
         }
 
         .site-meta-right {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--oxford-blue);
-            font-weight: 700;
+            font-weight: 500; /* Reduced from bold */
             letter-spacing: -0.2px;
         }
 
@@ -80,7 +80,6 @@
             overflow: hidden; 
         }
 
-        /* Switched to CSS Grid for precise element ordering */
         .hero-grid-section {
             display: grid;
             grid-template-columns: 1.2fr 40%;
@@ -150,7 +149,7 @@
 
         .hero-image-container {
             grid-column: 2;
-            grid-row: 1 / 3; /* Spans both the eyebrow and text rows */
+            grid-row: 1 / 3; 
             display: flex;
             justify-content: flex-end;
         }
@@ -183,7 +182,7 @@
         .graph-container iframe {
             width: 100%;
             height: 280px;
-            border: none; /* Removed border to integrate perfectly with the site */
+            border: none; 
         }
 
         .testimonial-container {
@@ -303,13 +302,12 @@
                 flex-direction: row; 
             }
             .site-title h1 {
-                font-size: 1.1rem;
+                font-size: 1rem; /* Slightly smaller for narrow screens */
             }
             .site-meta-right {
                 font-size: 0.9rem;
             }
 
-            /* Custom Mobile Grid Stacking */
             .hero-grid-section {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -317,28 +315,29 @@
                 padding-top: 40px;
             }
 
-            /* 1. Eyebrow at the very top */
             .hero-eyebrow-container {
                 grid-column: 1;
                 grid-row: 1;
                 margin-bottom: 0;
             }
 
-            /* 2. Image slots in below the eyebrow */
             .hero-image-container {
                 grid-column: 1;
                 grid-row: 2;
                 justify-content: center;
             }
 
-            /* 3. Main text and button drop to the bottom */
             .hero-text-container {
                 grid-column: 1;
                 grid-row: 3;
-                padding-bottom: 0;
+                padding-bottom: 48px; /* Restored bottom padding to lift off the banner edge */
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .hero-cta-btn {
+                align-self: center; /* Forces button to center on mobile */
             }
 
             .hero-profile-pic {
@@ -388,7 +387,6 @@
 
     <div class="hero-background">
         <div class="wrapper">
-            <!-- Grid container replaces old flex layout -->
             <section class="hero-grid-section">
                 
                 <div class="hero-eyebrow-container">
