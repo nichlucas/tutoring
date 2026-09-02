@@ -13,8 +13,9 @@
             --cambridge-blue: #A3C1AD;
             --text-dark: #333333;
             --text-light: #666666;
-            --header-bg: rgba(0, 29, 219, 0.8);
-            --header-border-color: rgba(0, 0, 0, 0.1); /* To make boxes subtle */
+            --banner-blue: #1E4E8C; /* A lighter shade of oxford-blue for the banner */
+            --header-bg: var(--banner-blue); 
+            --header-border-color: rgba(0, 0, 0, 0.1); 
         }
 
         body {
@@ -37,45 +38,42 @@
         /* Top Bar styling */
         .top-nav-bar {
             background-color: var(--header-bg);
-            padding: 5px 40px; /* 10 40 */
+            padding: 5px 40px; 
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        /* Restyled Site Title */
         .site-title h1 {
-            /*font-size: 1.4rem; Adjust title size slightly */
+            font-size: 1.4rem;
             letter-spacing: -1px;
             margin: 0;
-            color: #ffffff; /* White text on blue banner */
+            color: #ffffff; 
         }
 
-        /* Navigation Links in the banner */
         .nav-tabs {
             display: flex;
-            gap: 10px; /* Adjust spacing */
+            gap: 10px; 
         }
 
         .tab-link {
             text-decoration: none;
-            padding: 6px 12px; /* Reduced padding for narrower boxes */
-            font-size: 0.85rem; /* Sligthly smaller font */
+            padding: 6px 12px; 
+            font-size: 0.85rem; 
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #ffffff; /* White text on blue background */
+            color: #ffffff; 
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
             transition: 0.3s;
-            border: 1px solid var(--header-border-color); /* Subtle default border */
+            border: 1px solid var(--header-border-color); 
             border-radius: 4px;
         }
 
-        /* Active tab style on blue background - subtle box */
         .active-tab {
             color: var(--oxford-blue);
             background: #ffffff;
-            border-color: #ffffff; /* Ensure white background hides border */
+            border-color: #ffffff; 
         }
 
         .wrapper {
@@ -84,26 +82,26 @@
             padding: 20px 20px 40px 20px;
         }
 
-        /* Swapped Layout Section (Content and Image) */
+        /* Hero Layout Section */
         .swapped-layout-section {
             display: flex;
             align-items: flex-start;
             gap: 40px;
-            padding: 60px 0;
+            padding: 60px 0 20px 0;
             background-color: #ffffff;
         }
 
-        /* Left Content Column (Headers and Button) */
         .layout-content-left {
-            flex: 1; /* Content column takes up remaining space */
+            flex: 1; 
             display: flex;
             flex-direction: column;
-            gap: 15px; /* Spacing between elements */
+            gap: 15px; 
+            margin-top: 40px; /* Pushes the hero text lower */
         }
 
         .layout-content-left h2 {
-            font-size: 2.6rem; /* Restore to H2 size but prominent */
-            font-weight: 400; /* Make it impactful */
+            font-size: 2.6rem; 
+            font-weight: 400; 
             margin: 0;
             color: var(--oxford-blue);
             line-height: 1.2;
@@ -117,44 +115,89 @@
             line-height: 1.4;
         }
 
-        .layout-content-left .availability-status {
-            font-size: 1rem;
-            margin-top: 0px;
-            margin-bottom: 40px; /* Space before button */
-            justify-content: flex-start;
-        }
-
-        /* High-priority button under headers */
         .layout-content-left .inquiry-container {
-            margin-top: 2px;
-            margin-bottom: 0px; /* Positioned under other content */
-            text-align: left; /* Left align on left column */
+            margin-top: 15px;
+            margin-bottom: 5px; 
+            text-align: left; 
         }
 
-        /* Specific style for left-aligned button */
         .layout-content-left .inquiry-button {
             margin-top: 0;
             width: auto;
             display: inline-block;
         }
 
-        /* Right Image Column (Profile Picture) */
-        .layout-image-right {
-            flex: 0 0 auto; /* Image column takes up fixed space */
+        .layout-content-left .availability-status {
+            font-size: 1rem;
+            margin-top: 10px;
+            margin-bottom: 0px; 
+            justify-content: flex-start;
         }
 
-        .profile-pic {
+        .layout-image-right {
+            flex: 0 0 auto; 
+        }
+
+        .hero-placeholder-pic {
             height: 300px;
             width: 300px;
             object-fit: cover;
             border-radius: 5px;
+            border: 2px dashed #ccc; /* Dashed border for the placeholder */
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* New Profile & Testimonial Section */
+        .profile-testimonial-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+
+        .profile-image-container {
+            flex: 0 0 auto;
+        }
+
+        .profile-pic {
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+            border-radius: 5px;
             border: 2px solid #fff;
-        
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-container {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 30px;
+            border-left: 4px solid var(--cambridge-blue);
+            border-radius: 5px;
+        }
+
+        .testimonial-container p.quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .testimonial-container p.author {
+            font-weight: 700;
+            color: var(--oxford-blue);
+            margin: 0;
         }
 
         .main-content-body {
-            border-top: 1px solid #eee;
-            padding-top: 40px;
+            padding-top: 20px;
         }
 
         .contact-card {
@@ -182,7 +225,6 @@
 
 /* Mobile Adaptations */
 @media (max-width: 768px) {
-    /* Top Bar stacked */
     .top-nav-bar {
         flex-direction: column;
         padding: 15px;
@@ -198,7 +240,6 @@
         justify-content: center;
     }
 
-    /* Swapped section stacked */
     .swapped-layout-section {
         flex-direction: column;
         padding: 40px 0;
@@ -207,12 +248,13 @@
     }
 
     .layout-image-right {
-        order: -1; /* Image stays at top in mobile stacked order */
+        order: -1; 
     }
 
     .layout-content-left {
         text-align: center;
         align-items: center;
+        margin-top: 10px;
     }
 
     .layout-content-left h2 {
@@ -226,12 +268,16 @@
     .layout-content-left .inquiry-container {
         text-align: center;
     }
-}
 
-.inquiry-container {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    .profile-testimonial-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonial-container {
+        border-left: none;
+        border-top: 4px solid var(--cambridge-blue);
+    }
 }
 
 .inquiry-button {
@@ -268,11 +314,10 @@
 .status-circle {
     width: 10px;
     height: 10px;
-    background-color: #2ecc71; /* Emerald Green */
-    border: 0.5px solid #000;    /* Thin black border */
+    background-color: #2ecc71; 
+    border: 0.5px solid #000;    
     border-radius: 50%;
     display: inline-block;
-    /* Soft static glow */
     box-shadow: 0 0 5px rgba(46, 204, 113, 0.8); 
     animation: gentle-glow 2s ease-in-out infinite;
 }
@@ -309,28 +354,40 @@
         <div class="layout-content-left">
             <h2>Academic Mentorship <br>& Premium Tutoring</h2>
             <h3>I can help you reach your full potential in academics</h3>
-            <p class="availability-status">
-                Availability: <strong>Open</strong> <span class="status-circle"></span>
-            </p>
+            
             <div class="inquiry-container">
                 <a href="mailto:nandlucas99@gmail.com?subject=Tutoring Inquiry" class="inquiry-button">
                     Book a Consultation
                 </a>
             </div>
+
+            <p class="availability-status">
+                Availability: <strong>Open</strong> <span class="status-circle"></span>
+            </p>
         </div>
 
         <div class="layout-image-right">
-            <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="profile-pic">
+            <img src="placeholder-image.jpg" alt="New Image Placeholder" class="hero-placeholder-pic">
         </div>
         
     </section>
 
+    <section class="profile-testimonial-section">
+        <div class="profile-image-container">
+            <img src="profile-pic.jpg" alt="Dr. Nicholas Lucas" class="profile-pic">
+        </div>
+        <div class="testimonial-container">
+            <p class="quote">"This is a placeholder for your testimonial. You can put a great review from a past student here to build immediate trust with visitors."</p>
+            <p class="author">- Jane Doe, Undergraduate Student</p>
+        </div>
+    </section>
+
     <main class="main-content-body">
         <section>
-            <p>My tutoring experience primarily comes from my time as a PhD researcher at the University of Cambridge (2021-2025), where I worked with over 100 undergraduate students in tutorials, laboratory sessions and during field studies. I provided small-group "supervisions"&mdash;a hallmark of the Oxbridge system&mdash;designed for personalized guidance, foster deep subject understanding, and develop critical thinking beyond the core lecture material. I have helped students falling behind and those already excelling, and I've learned a lot in the process.
-            <div>
+            <p>My tutoring experience primarily comes from my time as a PhD researcher at the University of Cambridge (2021-2025), where I worked with over 100 undergraduate students in tutorials, laboratory sessions and during field studies. I provided small-group "supervisions"&mdash;a hallmark of the Oxbridge system&mdash;designed for personalized guidance, foster deep subject understanding, and develop critical thinking beyond the core lecture material. I have helped students falling behind and those already excelling, and I've learned a lot in the process.</p>
+            
             <p>I provide premium tutoring up to the undergraduate level as well as university admissions coaching and interview preparation. Whether you're falling behind, reaching for top grades or just needing some guidance, I can help you. I'm currently accepting in-person clients in Vancouver (Kitsilano/UBC) and worldwide via Zoom.</p>
-            </div>
+            
             <h3>Subjects</h3>
             <ul>
                 <li>AP/IB/Undergraduate Physics, Chemistry, Vectors and Calculus, Earth Sciences</li>
@@ -338,13 +395,14 @@
                 <li>Interview and admissions coaching</li>
                 <li>Feedback on written work in science/engineering</li>
             </ul>
+            
             <h3>Key Information</h3>
             <ul>
                 <li>Free 15 minute consultation</li>
                 <li><strong>Sessional rate</strong>: $100/hr</li>
                 <li><strong>5-hour bundle</strong>: $95/hr ($475)</li>
                 <li><strong>10-hour bundle</strong>: $90/hr ($900)</li>
-                <li><strong>20-hour bundle</strong>: $80/hr ($1600)</li>         
+                <li><strong>20-hour bundle</strong>: $80/hr ($1600)</li>        
                 <li><strong>Delivery</strong>: in person at the University of British Columbia or over Zoom/Teams; in-home visits are possible for +$30/session</li>
             </ul>
         </section>
