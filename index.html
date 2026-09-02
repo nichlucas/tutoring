@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nick Lucas, PhD | Tutoring and Mentorship</title>
+    <title>Dr. Nicholas Lucas | Tutoring and Mentorship</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
@@ -100,8 +100,8 @@
             display: flex;
             flex-direction: column;
             color: #ffffff; 
-            align-self: center; /* Centers the entire block vertically relative to the photo */
-            padding-bottom: 30px; /* Slight bump up so it aligns with your face */
+            padding-top: 20px; 
+            padding-bottom: 15px; 
         }
 
         .layout-content-left h2 {
@@ -121,12 +121,11 @@
             line-height: 1.4;
         }
 
-        /* Fixed Action Row - Normal spacing restored */
         .action-row {
             display: flex;
             align-items: center;
             gap: 25px; 
-            margin-top: 40px; /* Explicit space between subtitle and button */
+            margin-top: 40px; 
         }
 
         .inquiry-button {
@@ -176,13 +175,14 @@
         .graph-testimonial-section {
             display: flex;
             align-items: center; 
-            gap: 60px; 
-            padding: 0px 0 40px 0; /* Kept top padding at 0 so it hugs the blue banner */
+            gap: 40px; 
+            padding: 0px 0 40px 0; 
             margin-top: 0px; 
         }
 
+        /* Graph container takes less room now */
         .graph-container {
-            flex: 1; 
+            flex: 0 0 auto; 
             display: flex;
             justify-content: flex-start;
         }
@@ -192,6 +192,7 @@
             border-radius: 5px;
         }
 
+        /* Testimonial container takes up the remaining space, making it wider */
         .testimonial-container {
             flex: 1; 
             background: #f9f9f9;
@@ -316,7 +317,7 @@
         <div class="wrapper">
             <header class="top-nav-bar">
                 <div class="site-title">
-                    <h1>Nick Lucas, PhD</h1>
+                    <h1>Dr. Nicholas Lucas</h1>
                 </div>
                 <nav class="nav-tabs">
                     <a href="index.html" class="tab-link active-tab">Home</a>
@@ -344,7 +345,7 @@
                 </div>
 
                 <div class="layout-image-right">
-                    <img src="profile-pic.JPG" alt="Nick Lucas, PhD" class="hero-profile-pic">
+                    <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="hero-profile-pic">
                 </div>
                 
             </section>
@@ -354,7 +355,7 @@
     <div class="wrapper" style="padding-top: 0;">
         <section class="graph-testimonial-section">
             <div class="graph-container">
-                <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" width="450" height="450" style="border: none;" frameborder=0></iframe>
+                <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" width="350" height="350" style="border: none;" frameborder=0></iframe>
             </div>
             <div class="testimonial-container">
                 <p class="quote">"This is a placeholder for your testimonial. You can put a great review from a past student here to build immediate trust with visitors."</p>
