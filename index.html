@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick Lucas, PhD | Tutoring</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --oxford-blue: #002147;
-            --cambridge-blue: #A3C1AD;
-            --text-dark: #333333;
-            --text-light: #666666;
+            /* Core Brand Colors */
+            --oxford-blue: #002147; 
+            --text-dark: #1A202C;
+            --text-light: #4A5568;
+            --bg-offwhite: #F8FAFC;
+            
+            /* The Custom Gradient: Elegant Mint Green to Vibrant Pink */
+            --brand-gradient: linear-gradient(135deg, #0DD3A3 0%, #F34C89 100%);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Open Sans', Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
             line-height: 1.7; 
             background-color: #ffffff;
@@ -25,30 +33,30 @@
         }
 
         h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--oxford-blue);
-        }
-
-        /* Unified Oxford Blue background */
-        .blue-header-background {
-            background-color: var(--oxford-blue);
-            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
         }
 
         /* MASTER GRID WRAPPER */
         .wrapper {
-            max-width: 1080px; 
+            max-width: 1100px; 
             margin: 0 auto;
             padding: 0 32px; 
         }
 
-        /* Top Bar styling */
-        .top-nav-bar {
-            padding: 28px 0 16px 0; 
+        /* --- WHITE NAVBAR --- */
+        .white-nav-bar {
+            background-color: #ffffff;
+            padding: 16px 0;
+            box-shadow: 0 4px 20px rgba(0, 33, 71, 0.04);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .site-meta-group {
@@ -58,100 +66,127 @@
         }
 
         .site-title h1 {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             letter-spacing: -0.5px;
-            margin: 0;
-            color: #ffffff; 
-            font-weight: 600; 
+            color: var(--oxford-blue); 
+            font-weight: 700; 
         }
 
         .site-subtext {
-            color: rgba(255, 255, 255, 0.75);
+            color: var(--text-light);
             font-size: 0.95rem;
             font-weight: 400;
         }
 
-        /* Nav tabs / booking button */
-        .nav-button-container {
-            display: flex;
-            align-items: center;
-        }
-
         .nav-booking-button {
             display: inline-block;
-            background-color: #ffffff;
             color: var(--oxford-blue);
-            border: 2px solid #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.75px;
-            padding: 9px 22px;
-            font-size: 0.8rem;
-            text-decoration: none;
+            border: 2px solid var(--oxford-blue);
             border-radius: 4px;
-            transition: all 0.25s ease;
+            padding: 8px 24px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .nav-booking-button:hover {
-            background-color: transparent;
+            background-color: var(--oxford-blue);
             color: #ffffff;
         }
 
-        /* Hero Layout Section */
+        /* --- HERO SECTION --- */
+        .hero-background {
+            background-color: var(--oxford-blue);
+            width: 100%;
+            overflow: hidden; 
+        }
+
         .swapped-layout-section {
             display: flex;
             align-items: flex-end; 
             justify-content: space-between;
-            gap: 48px;
-            padding-top: 48px;
+            gap: 40px;
+            padding-top: 70px;
         }
 
         .layout-content-left {
-            flex: 1; 
+            flex: 1.2; 
             display: flex;
             flex-direction: column;
             color: #ffffff; 
-            padding-bottom: 56px;
+            padding-bottom: 90px;
+        }
+
+        /* The Gradient Text Effect */
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            display: inline-block;
         }
 
         .layout-content-left h2 {
-            font-size: 3rem; 
+            font-size: 3.4rem; 
             font-weight: 700; 
             line-height: 1.15;
-            margin: 0 0 14px 0;
+            margin-bottom: 16px;
             color: #ffffff; 
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
         }
 
         .layout-content-left h3 {
-            font-size: 1.25rem;
-            color: var(--cambridge-blue); 
-            margin: 0;
-            font-weight: 400;
-            letter-spacing: 0.2px;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85); 
+            margin-bottom: 36px;
+            font-weight: 300;
+        }
+
+        /* The Gradient Button Effect */
+        .hero-cta-btn {
+            align-self: flex-start;
+            display: inline-block;
+            background: var(--brand-gradient);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 16px 36px;
+            text-decoration: none;
+            border-radius: 50px; 
+            box-shadow: 0 8px 24px rgba(243, 76, 137, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(243, 76, 137, 0.45);
         }
 
         .layout-image-right {
             flex: 0 0 auto; 
             display: flex;
             justify-content: center;
-            align-self: flex-end;
         }
         
         .hero-profile-pic {
-            height: 380px;
+            height: 440px;
             width: auto;
             object-fit: cover;
             display: block; 
+            border-radius: 12px 12px 0 0; 
         }
 
-        /* Graph & Testimonial Section */
+        /* --- GRAPH & TESTIMONIAL --- */
         .graph-testimonial-section {
             display: flex;
-            align-items: center; 
-            gap: 40px; 
-            padding: 60px 0 30px 0; 
+            align-items: stretch; 
+            gap: 50px; 
+            padding: 80px 0 40px 0; 
         }
 
         .graph-container {
@@ -163,182 +198,198 @@
         .graph-container iframe {
             width: 100%;
             height: 280px;
-            border-radius: 6px;
-            border: none;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
+        /* Gradient Border Trick using Pseudo-element */
         .testimonial-container {
             flex: 1; 
-            background: #f8fafc;
-            padding: 32px 36px;
-            border-left: 4px solid var(--cambridge-blue);
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            background: var(--bg-offwhite);
+            padding: 40px;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+        }
+
+        .testimonial-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: var(--brand-gradient);
+            border-radius: 6px 0 0 6px;
         }
 
         .testimonial-container p.quote {
             font-style: italic;
-            font-size: 1.05rem;
-            line-height: 1.65;
+            font-size: 1.15rem;
+            line-height: 1.7;
             color: var(--text-light);
-            margin: 0 0 14px 0;
+            margin: 0 0 24px 0;
         }
 
         .testimonial-container p.author {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--oxford-blue);
             margin: 0;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
-        /* Body Content */
+        /* --- BODY CONTENT --- */
         .main-content-body {
             padding-top: 20px;
-            padding-bottom: 70px;
+            padding-bottom: 80px;
         }
 
         .main-content-body h3 {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-top: 2rem;
-            margin-bottom: 0.6rem;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            color: var(--oxford-blue);
         }
 
         .main-content-body p {
-            margin-bottom: 1.25rem;
-            font-size: 1.02rem;
+            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+            color: var(--text-light);
         }
 
         .main-content-body ul {
-            padding-left: 22px;
+            padding-left: 24px;
             margin-bottom: 1.5rem;
         }
 
         .main-content-body li {
-            margin-bottom: 6px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .main-content-body li strong {
+            color: var(--text-dark);
         }
 
         .contact-card {
             background: var(--oxford-blue);
             color: white;
-            padding: 36px 24px; 
-            border-radius: 10px;
+            padding: 48px 32px; 
+            border-radius: 12px;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card p:first-child {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 16px;
         }
 
         .contact-card a {
-            color: var(--cambridge-blue);
+            color: #0DD3A3; /* Mint accent for links on dark bg */
             text-decoration: none;
             font-weight: 600;
         }
 
         .contact-card a:hover {
             text-decoration: underline;
-        }
-
-        .contact-card p {
-            margin: 4px 0; 
+            color: #F34C89; /* Pink hover state */
         }
 
         /* Mobile Adaptations */
-        @media (max-width: 768px) {
-            .top-nav-bar {
+        @media (max-width: 820px) {
+            .nav-content {
                 flex-direction: column;
-                padding: 20px 0;
                 gap: 16px;
                 text-align: center;
             }
 
             .site-meta-group {
                 flex-direction: column;
-                align-items: center;
-                gap: 4px;
+                gap: 6px;
             }
 
             .swapped-layout-section {
                 flex-direction: column;
-                padding-top: 36px;
+                padding-top: 48px;
                 text-align: center;
-                gap: 20px;
-            }
-
-            .layout-image-right {
-                order: 2; 
-                width: 100%; 
-            }
-
-            .hero-profile-pic {
-                height: 300px;
-                margin: 0 auto;
+                gap: 30px;
             }
 
             .layout-content-left {
-                order: 1;
-                text-align: center;
+                padding-bottom: 20px;
                 align-items: center;
-                padding-bottom: 10px; 
             }
 
             .layout-content-left h2 {
-                font-size: 2.1rem;
+                font-size: 2.6rem;
+            }
+
+            .hero-profile-pic {
+                height: 360px;
             }
 
             .graph-testimonial-section {
                 flex-direction: column;
-                text-align: left;
-                gap: 24px;
-                padding: 40px 0 20px 0;
-            }
-
-            .graph-container {
-                width: 100%;
-            }
-
-            .graph-container iframe {
-                max-width: 320px;
+                padding: 50px 0;
+                align-items: center;
             }
 
             .testimonial-container {
-                border-left: 4px solid var(--cambridge-blue);
+                border-radius: 12px;
+            }
+            
+            .testimonial-container::before {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: auto;
+                height: 6px;
+                width: 100%;
+                border-radius: 12px 12px 0 0;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="blue-header-background">
-        <div class="wrapper">
-            <header class="top-nav-bar">
-                <div class="site-meta-group">
-                    <div class="site-title">
-                        <h1>Nick Lucas, PhD</h1>
-                    </div>
-                    <div class="site-subtext">
-                        (613) 816-0059 &middot; Vancouver
-                    </div>
+    <nav class="white-nav-bar">
+        <div class="wrapper nav-content">
+            <div class="site-meta-group">
+                <div class="site-title">
+                    <h1>Nick Lucas, PhD</h1>
                 </div>
-                <div class="nav-button-container">
-                    <a href="mailto:nandlucas99@gmail.com?subject=Tutoring%20Inquiry" class="nav-booking-button">
-                        Book a Consultation
-                    </a>
+                <div class="site-subtext">
+                    (613) 816-0059 &middot; Vancouver
                 </div>
-            </header>
+            </div>
+            <div class="nav-button-container">
+                <a href="mailto:nandlucas99@gmail.com?subject=Tutoring%20Inquiry" class="nav-booking-button">
+                    Book Consult &rarr;
+                </a>
+            </div>
         </div>
+    </nav>
 
+    <div class="hero-background">
         <div class="wrapper">
             <section class="swapped-layout-section">
-                
                 <div class="layout-content-left">
-                    <h2>Academic Mentorship<br>& Premium Tutoring</h2>
-                    <h3>Reach your full potential</h3>
+                    <span class="eyebrow">Learn from a Cambridge Ph.D.</span>
+                    <h2>Maths, Sciences &<br>Admissions Coaching</h2>
+                    <h3>Reach your full potential with premium, personalized guidance.</h3>
+                    <a href="mailto:nandlucas99@gmail.com?subject=Tutoring%20Inquiry" class="hero-cta-btn">
+                        Book your consultation
+                    </a>
                 </div>
-
                 <div class="layout-image-right">
                     <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="hero-profile-pic">
                 </div>
-                
             </section>
         </div>
     </div> 
@@ -380,7 +431,7 @@
             </section>
 
             <div class="contact-card">
-                <p style="font-weight: bold; margin-bottom: 10px; font-size: 1.15rem;">Contact Information</p>
+                <p>Ready to boost your grades?</p>
                 <p>Email: <a href="mailto:nandlucas99@gmail.com">nandlucas99@gmail.com</a></p>
                 <p>Phone: <a href="tel:+16138160059">+1 (613) 816-0059</a></p>
             </div>
