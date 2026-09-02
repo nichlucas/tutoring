@@ -85,15 +85,15 @@
         .wrapper {
             max-width: 1000px; 
             margin: 0 auto;
-            padding: 20px 20px 40px 20px;
+            padding: 20px 20px 100px 20px;
         }
 
-        /* Hero Layout Section */
+        /* Hero Layout Section - Adjusted for flush image and thicker top */
         .swapped-layout-section {
             display: flex;
-            align-items: center; 
+            align-items: flex-end; /* Forces the image to the bottom edge */
             gap: 40px;
-            padding: 40px 0 50px 0; 
+            padding: 80px 0 0 0; /* 80px top padding for thickness, 0px bottom */
         }
 
         .layout-content-left {
@@ -101,6 +101,7 @@
             display: flex;
             flex-direction: column;
             color: #ffffff; 
+            padding-bottom: 50px; /* Keeps text visually centered rather than hugging the bottom */
         }
 
         .layout-content-left h2 {
@@ -154,29 +155,28 @@
             justify-content: center;
         }
         
-        /* Swapped Profile Picture in Hero */
+        /* Profile Picture - Border removed, flat bottom corners */
         .hero-profile-pic {
             height: 300px;
             width: 300px;
             object-fit: cover;
-            border-radius: 5px;
-            border: 2px solid #fff;
+            border-radius: 5px 5px 0 0; /* Keeps top rounded, makes bottom perfectly flat */
+            display: block; /* Removes weird inline-block whitespace gaps */
         }
 
-        /* Swapped Graph & Testimonial Section */
+        /* Graph & Testimonial Section - Tightened gap */
         .graph-testimonial-section {
             display: flex;
             align-items: center;
             gap: 40px;
-            padding: 40px 0;
-            margin-top: 2px;
+            padding: 20px 0 40px 0; /* Reduced top padding to 20px */
+            margin-top: 0px; /* Margin removed completely */
         }
 
         .graph-container {
             flex: 0 0 auto;
         }
 
-        /* Graph Iframe settings */
         .graph-container iframe {
             max-width: 100%;
             border-radius: 5px;
@@ -249,7 +249,7 @@
 
     .swapped-layout-section {
         flex-direction: column;
-        padding: 40px 20px;
+        padding: 40px 20px 0 20px; /* Keep bottom 0 on mobile too */
         text-align: center;
         gap: 30px;
     }
@@ -262,6 +262,7 @@
     .layout-content-left {
         text-align: center;
         align-items: center;
+        padding-bottom: 40px; /* Spacing for bottom of blue box on mobile */
     }
 
     .layout-content-left h2 {
@@ -366,7 +367,9 @@
                 
             </section>
         </div>
-    </div> <div class="wrapper">
+    </div> 
+    
+    <div class="wrapper" style="padding-top: 0;">
         <section class="graph-testimonial-section">
             <div class="graph-container">
                 <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" width="450" height="450" style="border: none;" frameborder=0></iframe>
