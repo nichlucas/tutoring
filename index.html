@@ -13,8 +13,8 @@
             --cambridge-blue: #A3C1AD;
             --text-dark: #333333;
             --text-light: #666666;
-            /* Banner set exactly to the Cambridge Blue variable */
-            --header-bg: var(--cambridge-blue); 
+            /* Banner set to Oxford Blue */
+            --header-bg: var(--oxford-blue); 
             --header-border-color: rgba(255, 255, 255, 0.4); 
         }
 
@@ -48,9 +48,9 @@
             font-size: 1.4rem;
             letter-spacing: -1px;
             margin: 0;
-            /* Reverted back to white */
             color: #ffffff; 
-            font-weight: 600;
+            /* Un-bolded the name */
+            font-weight: 300; 
         }
 
         .nav-tabs {
@@ -64,7 +64,6 @@
             font-size: 0.85rem; 
             text-transform: uppercase;
             letter-spacing: 1px;
-            /* Reverted back to white */
             color: #ffffff; 
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -73,7 +72,7 @@
             border-radius: 4px;
         }
 
-        /* Reverted active tab back to original scheme */
+        /* Active tab matches the dark blue banner nicely */
         .active-tab {
             color: var(--oxford-blue);
             background: #ffffff;
@@ -140,9 +139,11 @@
 
         .layout-image-right {
             flex: 0 0 auto; 
+            display: flex;
+            justify-content: center;
         }
         
-        /* Ensures the 500px Desmos embed shrinks gracefully on small screens */
+        /* Ensures the embed shrinks gracefully on small screens */
         .layout-image-right iframe {
             max-width: 100%;
             border-radius: 5px;
@@ -244,7 +245,7 @@
 
     .layout-image-right {
         order: -1; 
-        width: 100%; /* Helps iframe take full width on mobile */
+        width: 100%; 
     }
 
     .layout-content-left {
@@ -359,7 +360,7 @@
         </div>
 
         <div class="layout-image-right">
-            <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+            <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" width="350" height="350" style="border: none;" frameborder=0></iframe>
         </div>
         
     </section>
