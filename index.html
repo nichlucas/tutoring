@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Nicholas Lucas | Tutoring and Mentorship</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -13,7 +13,6 @@
             --cambridge-blue: #A3C1AD;
             --text-dark: #333333;
             --text-light: #666666;
-            --header-border-color: rgba(255, 255, 255, 0.4); 
         }
 
         body {
@@ -62,29 +61,31 @@
             font-weight: 300; 
         }
 
-        .nav-tabs {
+        /* Nav tabs replaced with booking button style */
+        .nav-button-container {
             display: flex;
-            gap: 15px; 
+            align-items: center;
         }
 
-        .tab-link {
-            text-decoration: none;
-            padding: 6px 14px; 
-            font-size: 0.85rem; 
+        .nav-booking-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: var(--oxford-blue);
+            border: 2px solid #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #ffffff; 
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            transition: 0.3s;
-            border: 1px solid var(--header-border-color); 
+            padding: 10px 25px;
+            font-size: 0.85rem;
+            text-decoration: none;
             border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        .active-tab {
-            color: var(--oxford-blue);
-            background: #ffffff;
-            border-color: #ffffff; 
+        .nav-booking-button:hover {
+            background-color: transparent;
+            color: #ffffff;
         }
 
         /* Hero Layout Section */
@@ -101,7 +102,7 @@
             flex-direction: column;
             color: #ffffff; 
             padding-top: 20px; 
-            padding-bottom: 15px; 
+            padding-bottom: 45px; /* Adjusted padding since availability text is gone */
         }
 
         .layout-content-left h2 {
@@ -148,15 +149,6 @@
             color: #ffffff;
         }
 
-        .availability-status {
-            font-size: 1rem;
-            color: #ffffff; 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 0; 
-        }
-
         .layout-image-right {
             flex: 0 0 auto; 
             display: flex;
@@ -175,17 +167,16 @@
         .graph-testimonial-section {
             display: flex;
             align-items: center; 
-            gap: 50px; /* Increased gap to give them space */
+            gap: 50px; 
             padding: 0px 0 40px 0; 
             margin-top: 0px; 
         }
 
-        /* Graph container tightened to the left */
         .graph-container {
             flex: 0 0 auto; 
             display: flex;
             justify-content: flex-start;
-            margin-left: -10px; /* Shifts the graph slightly further left */
+            margin-left: -10px; 
         }
 
         .graph-container iframe {
@@ -193,7 +184,6 @@
             border-radius: 5px;
         }
 
-        /* Testimonial container expanded wider */
         .testimonial-container {
             flex: 1; 
             background: #f9f9f9;
@@ -209,10 +199,13 @@
             margin-bottom: 15px;
         }
 
+        /* Testimonial author updated to Montserrat font */
         .testimonial-container p.author {
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
             color: var(--oxford-blue);
             margin: 0;
+            font-size: 0.95rem;
         }
 
         .main-content-body {
@@ -243,32 +236,12 @@
             padding-left: 20px;
         }
 
-        .status-circle {
-            width: 10px;
-            height: 10px;
-            background-color: #2ecc71; 
-            border: 0.5px solid #000;    
-            border-radius: 50%;
-            display: inline-block;
-            animation: gentle-glow 2s ease-in-out infinite;
-        }
-
-        @keyframes gentle-glow {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.2); }
-        }
-
 /* Mobile Adaptations */
 @media (max-width: 768px) {
     .top-nav-bar {
         flex-direction: column;
         padding: 20px 0;
         gap: 15px;
-    }
-
-    .nav-tabs {
-        width: 100%;
-        justify-content: center;
     }
 
     .swapped-layout-section {
@@ -303,7 +276,7 @@
 
     .graph-container {
         justify-content: center;
-        margin-left: 0; /* Reset shift on mobile */
+        margin-left: 0; 
     }
 
     .testimonial-container {
@@ -321,11 +294,11 @@
                 <div class="site-title">
                     <h1>Dr. Nicholas Lucas</h1>
                 </div>
-                <nav class="nav-tabs">
-                    <a href="index.html" class="tab-link active-tab">Home</a>
-                    <a href="research.html" class="tab-link">Research</a>
-                    <a href="cv.html" class="tab-link">CV</a>
-                </nav>
+                <div class="nav-button-container">
+                    <a href="mailto:nandlucas99@gmail.com?subject=Tutoring Inquiry" class="nav-booking-button">
+                        Book a Consultation
+                    </a>
+                </div>
             </header>
         </div>
 
@@ -340,9 +313,6 @@
                         <a href="mailto:nandlucas99@gmail.com?subject=Tutoring Inquiry" class="inquiry-button">
                             Book a Consultation
                         </a>
-                        <p class="availability-status">
-                            Availability: <strong>Open</strong> <span class="status-circle"></span>
-                        </p>
                     </div>
                 </div>
 
@@ -361,7 +331,7 @@
             </div>
             <div class="testimonial-container">
                 <p class="quote">"This is a placeholder for your testimonial. You can put a great review from a past student here to build immediate trust with visitors."</p>
-                <p class="author">- Anant, undergraduate student (Cambridge)</p>
+                <p class="author">&mdash; Anant, undergraduate student (Cambridge)</p>
             </div>
         </section>
 
