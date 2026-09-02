@@ -13,9 +13,8 @@
             --cambridge-blue: #A3C1AD;
             --text-dark: #333333;
             --text-light: #666666;
-            --banner-blue: #1E4E8C; /* A lighter shade of oxford-blue for the banner */
-            --header-bg: var(--banner-blue); 
-            --header-border-color: rgba(0, 0, 0, 0.1); 
+            /* Banner set to Cambridge Blue */
+            --header-bg: var(--cambridge-blue); 
         }
 
         body {
@@ -48,7 +47,9 @@
             font-size: 1.4rem;
             letter-spacing: -1px;
             margin: 0;
-            color: #ffffff; 
+            /* Changed to Oxford Blue for readability on the light Cambridge Blue banner */
+            color: var(--oxford-blue); 
+            font-weight: 600;
         }
 
         .nav-tabs {
@@ -62,18 +63,20 @@
             font-size: 0.85rem; 
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #ffffff; 
+            /* Changed to Oxford Blue */
+            color: var(--oxford-blue); 
             font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
+            font-weight: 600;
             transition: 0.3s;
-            border: 1px solid var(--header-border-color); 
+            border: 1px solid var(--oxford-blue); 
             border-radius: 4px;
         }
 
+        /* Inverted the active tab to stand out */
         .active-tab {
-            color: var(--oxford-blue);
-            background: #ffffff;
-            border-color: #ffffff; 
+            color: #ffffff;
+            background: var(--oxford-blue);
+            border-color: var(--oxford-blue); 
         }
 
         .wrapper {
@@ -95,14 +98,15 @@
             flex: 1; 
             display: flex;
             flex-direction: column;
-            gap: 15px; 
-            margin-top: 40px; /* Pushes the hero text lower */
+            /* Added padding to push headers down to center with the image */
+            padding-top: 50px; 
         }
 
         .layout-content-left h2 {
             font-size: 2.6rem; 
             font-weight: 400; 
             margin: 0;
+            margin-bottom: 10px;
             color: var(--oxford-blue);
             line-height: 1.2;
         }
@@ -116,8 +120,9 @@
         }
 
         .layout-content-left .inquiry-container {
-            margin-top: 15px;
-            margin-bottom: 5px; 
+            /* Large margin pushes the button below the 300px placeholder image */
+            margin-top: 140px;
+            margin-bottom: 0px; 
             text-align: left; 
         }
 
@@ -129,7 +134,8 @@
 
         .layout-content-left .availability-status {
             font-size: 1rem;
-            margin-top: 10px;
+            /* Tightened the space to tuck right under the button */
+            margin-top: 8px;
             margin-bottom: 0px; 
             justify-content: flex-start;
         }
@@ -143,16 +149,17 @@
             width: 300px;
             object-fit: cover;
             border-radius: 5px;
-            border: 2px dashed #ccc; /* Dashed border for the placeholder */
+            border: 2px dashed #ccc; 
             background-color: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #999;
             font-family: 'Montserrat', sans-serif;
+            /* Shadow removed */
         }
 
-        /* New Profile & Testimonial Section */
+        /* Profile & Testimonial Section */
         .profile-testimonial-section {
             display: flex;
             align-items: center;
@@ -172,7 +179,7 @@
             object-fit: cover;
             border-radius: 5px;
             border: 2px solid #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            /* Shadow removed */
         }
 
         .testimonial-container {
@@ -254,19 +261,21 @@
     .layout-content-left {
         text-align: center;
         align-items: center;
-        margin-top: 10px;
+        padding-top: 10px;
     }
 
     .layout-content-left h2 {
         font-size: 1.8rem;
     }
 
-    .layout-content-left .availability-status {
-        justify-content: center;
+    .layout-content-left .inquiry-container {
+        /* Reset spacing for mobile */
+        margin-top: 20px;
+        text-align: center;
     }
 
-    .layout-content-left .inquiry-container {
-        text-align: center;
+    .layout-content-left .availability-status {
+        justify-content: center;
     }
 
     .profile-testimonial-section {
@@ -299,7 +308,7 @@
     background-color: transparent;
     color: var(--oxford-blue);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Shadow removed */
 }
 
 .availability-status {
@@ -308,7 +317,6 @@
     justify-content: center;
     gap: 10px;
     font-size: 1rem;
-    margin-top: 15px;
 }
 
 .status-circle {
@@ -318,17 +326,16 @@
     border: 0.5px solid #000;    
     border-radius: 50%;
     display: inline-block;
-    box-shadow: 0 0 5px rgba(46, 204, 113, 0.8); 
+    /* Glow shadow removed */
     animation: gentle-glow 2s ease-in-out infinite;
 }
 
+/* Glow keyframes simplified to just adjust brightness */
 @keyframes gentle-glow {
     0%, 100% {
-        box-shadow: 0 0 3px rgba(46, 204, 113, 0.4);
         filter: brightness(1);
     }
     50% {
-        box-shadow: 0 0 10px rgba(46, 204, 113, 0.9);
         filter: brightness(1.2);
     }
 }
@@ -367,14 +374,14 @@
         </div>
 
         <div class="layout-image-right">
-            <img src="placeholder-image.jpg" alt="New Image Placeholder" class="hero-placeholder-pic">
+            <img src="placeholder-image.JPG" alt="New Image Placeholder" class="hero-placeholder-pic">
         </div>
         
     </section>
 
     <section class="profile-testimonial-section">
         <div class="profile-image-container">
-            <img src="profile-pic.jpg" alt="Dr. Nicholas Lucas" class="profile-pic">
+            <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="profile-pic">
         </div>
         <div class="testimonial-container">
             <p class="quote">"This is a placeholder for your testimonial. You can put a great review from a past student here to build immediate trust with visitors."</p>
