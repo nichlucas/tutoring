@@ -26,10 +26,7 @@
 
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 100;
             color: var(--oxford-blue);
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
         }
 
         /* Unified Oxford Blue background */
@@ -40,28 +37,41 @@
 
         /* MASTER GRID WRAPPER */
         .wrapper {
-            max-width: 1050px; 
+            max-width: 1080px; 
             margin: 0 auto;
-            padding: 0 40px; 
+            padding: 0 32px; 
         }
 
         /* Top Bar styling */
         .top-nav-bar {
-            padding: 30px 0 10px 0; 
+            padding: 28px 0 16px 0; 
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .site-meta-group {
+            display: flex;
+            align-items: baseline;
+            gap: 24px;
         }
 
         .site-title h1 {
-            font-size: 1.4rem;
-            letter-spacing: -1px;
+            font-size: 1.35rem;
+            letter-spacing: -0.5px;
             margin: 0;
             color: #ffffff; 
-            font-weight: 300; 
+            font-weight: 600; 
         }
 
-        /* Nav tabs replaced with booking button style */
+        .site-subtext {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        /* Nav tabs / booking button */
         .nav-button-container {
             display: flex;
             align-items: center;
@@ -75,12 +85,12 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 10px 25px;
-            font-size: 0.85rem;
+            letter-spacing: 0.75px;
+            padding: 9px 22px;
+            font-size: 0.8rem;
             text-decoration: none;
             border-radius: 4px;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .nav-booking-button:hover {
@@ -92,8 +102,9 @@
         .swapped-layout-section {
             display: flex;
             align-items: flex-end; 
-            gap: 40px;
-            padding: 40px 0 0 0; 
+            justify-content: space-between;
+            gap: 48px;
+            padding-top: 48px;
         }
 
         .layout-content-left {
@@ -101,66 +112,37 @@
             display: flex;
             flex-direction: column;
             color: #ffffff; 
-            padding-top: 20px; 
-            padding-bottom: 45px; /* Adjusted padding since availability text is gone */
+            padding-bottom: 56px;
         }
 
         .layout-content-left h2 {
-            font-size: 2.6rem; 
-            font-weight: 400; 
-            margin: 10px;
-            margin-bottom: 0px;
+            font-size: 3rem; 
+            font-weight: 700; 
+            line-height: 1.15;
+            margin: 0 0 14px 0;
             color: #ffffff; 
-            line-height: 1.2;
+            letter-spacing: -0.5px;
         }
 
         .layout-content-left h3 {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: var(--cambridge-blue); 
-            margin: 10px;
-            margin-bottom: 60px;
+            margin: 0;
             font-weight: 400;
-            line-height: 1.4;
-        }
-
-        .action-row {
-            display: flex;
-            align-items: center;
-            gap: 25px; 
-            margin-top: 40px; 
-        }
-
-        .inquiry-button {
-            display: inline-block;
-            background-color: #ffffff;
-            color: var(--oxford-blue);
-            border: 2px solid #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .inquiry-button:hover {
-            background-color: transparent;
-            color: #ffffff;
+            letter-spacing: 0.2px;
         }
 
         .layout-image-right {
             flex: 0 0 auto; 
             display: flex;
             justify-content: center;
+            align-self: flex-end;
         }
         
         .hero-profile-pic {
-            height: 350px;
+            height: 380px;
             width: auto;
             object-fit: cover;
-            border-radius: 5px 5px 0 0; 
             display: block; 
         }
 
@@ -168,39 +150,40 @@
         .graph-testimonial-section {
             display: flex;
             align-items: center; 
-            gap: 50px; 
-            padding: 0px 0 40px 0; 
-            margin-top: 0px; 
+            gap: 40px; 
+            padding: 60px 0 30px 0; 
         }
 
         .graph-container {
-            flex: 0 0 auto; 
+            flex: 0 0 300px; 
             display: flex;
-            justify-content: flex-start;
-            margin-left: -10px; 
+            justify-content: center;
         }
 
         .graph-container iframe {
-            max-width: 100%;
-            border-radius: 5px;
+            width: 100%;
+            height: 280px;
+            border-radius: 6px;
+            border: none;
         }
 
         .testimonial-container {
             flex: 1; 
-            background: #f9f9f9;
-            padding: 30px;
+            background: #f8fafc;
+            padding: 32px 36px;
             border-left: 4px solid var(--cambridge-blue);
-            border-radius: 5px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
         }
 
         .testimonial-container p.quote {
             font-style: italic;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+            line-height: 1.65;
             color: var(--text-light);
-            margin-bottom: 15px;
+            margin: 0 0 14px 0;
         }
 
-        /* Testimonial author updated to Montserrat font */
         .testimonial-container p.author {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -209,82 +192,118 @@
             font-size: 0.95rem;
         }
 
+        /* Body Content */
         .main-content-body {
             padding-top: 20px;
-            padding-bottom: 60px;
+            padding-bottom: 70px;
+        }
+
+        .main-content-body h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .main-content-body p {
+            margin-bottom: 1.25rem;
+            font-size: 1.02rem;
+        }
+
+        .main-content-body ul {
+            padding-left: 22px;
+            margin-bottom: 1.5rem;
+        }
+
+        .main-content-body li {
+            margin-bottom: 6px;
         }
 
         .contact-card {
             background: var(--oxford-blue);
             color: white;
-            padding: 40px 20px 20px 40px; 
-            border-radius: 15px;
+            padding: 36px 24px; 
+            border-radius: 10px;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 50px;
         }
 
         .contact-card a {
             color: var(--cambridge-blue);
             text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
         }
 
         .contact-card p {
-            margin: 0; 
-            padding: 0;
+            margin: 4px 0; 
         }
 
-        ul {
-            padding-left: 20px;
+        /* Mobile Adaptations */
+        @media (max-width: 768px) {
+            .top-nav-bar {
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .site-meta-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .swapped-layout-section {
+                flex-direction: column;
+                padding-top: 36px;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .layout-image-right {
+                order: 2; 
+                width: 100%; 
+            }
+
+            .hero-profile-pic {
+                height: 300px;
+                margin: 0 auto;
+            }
+
+            .layout-content-left {
+                order: 1;
+                text-align: center;
+                align-items: center;
+                padding-bottom: 10px; 
+            }
+
+            .layout-content-left h2 {
+                font-size: 2.1rem;
+            }
+
+            .graph-testimonial-section {
+                flex-direction: column;
+                text-align: left;
+                gap: 24px;
+                padding: 40px 0 20px 0;
+            }
+
+            .graph-container {
+                width: 100%;
+            }
+
+            .graph-container iframe {
+                max-width: 320px;
+            }
+
+            .testimonial-container {
+                border-left: 4px solid var(--cambridge-blue);
+            }
         }
-
-/* Mobile Adaptations */
-@media (max-width: 768px) {
-    .top-nav-bar {
-        flex-direction: column;
-        padding: 20px 0;
-        gap: 15px;
-    }
-
-    .swapped-layout-section {
-        flex-direction: column;
-        padding: 40px 0 0 0; 
-        text-align: center;
-        gap: 30px;
-    }
-
-    .layout-image-right {
-        order: -1; 
-        width: 100%; 
-    }
-
-    .layout-content-left {
-        text-align: center;
-        align-items: center;
-        padding-bottom: 40px; 
-    }
-
-    .action-row {
-        flex-direction: column;
-        margin-top: 30px; 
-    }
-
-    .graph-testimonial-section {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-        padding: 40px 0;
-    }
-
-    .graph-container {
-        justify-content: center;
-        margin-left: 0; 
-    }
-
-    .testimonial-container {
-        border-left: none;
-        border-top: 4px solid var(--cambridge-blue);
-    }
-}
     </style>
 </head>
 <body>
@@ -292,22 +311,27 @@
     <div class="blue-header-background">
         <div class="wrapper">
             <header class="top-nav-bar">
-                <div class="site-title">
-                    <h1>Nick Lucas, PhD&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(613) 816-0059 &middot Vancouver</h1>
+                <div class="site-meta-group">
+                    <div class="site-title">
+                        <h1>Nick Lucas, PhD</h1>
+                    </div>
+                    <div class="site-subtext">
+                        (613) 816-0059 &middot; Vancouver
+                    </div>
                 </div>
                 <div class="nav-button-container">
-                    <a href="mailto:nandlucas99@gmail.com?subject=Tutoring Inquiry" class="nav-booking-button">
+                    <a href="mailto:nandlucas99@gmail.com?subject=Tutoring%20Inquiry" class="nav-booking-button">
                         Book a Consultation
                     </a>
                 </div>
             </header>
         </div>
 
-        <div class="wrapper" style="padding-top: 0; padding-bottom: 0;">
+        <div class="wrapper">
             <section class="swapped-layout-section">
                 
                 <div class="layout-content-left">
-                    <h2>Academic Mentorship <br>& Premium Tutoring</h2>
+                    <h2>Academic Mentorship<br>& Premium Tutoring</h2>
                     <h3>Reach your full potential</h3>
                 </div>
 
@@ -319,10 +343,10 @@
         </div>
     </div> 
     
-    <div class="wrapper" style="padding-top: 0;">
+    <div class="wrapper">
         <section class="graph-testimonial-section">
             <div class="graph-container">
-                <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" width="300" height="300" style="border: none;" frameborder=0></iframe>
+                <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" frameborder="0"></iframe>
             </div>
             <div class="testimonial-container">
                 <p class="quote">"This is a placeholder for your testimonial. You can put a great review from a past student here to build immediate trust with visitors."</p>
@@ -339,7 +363,7 @@
                 <h3>Subjects</h3>
                 <ul>
                     <li>AP/IB/Undergraduate Physics, Chemistry, Vectors and Calculus, Earth Sciences</li>
-                    <li>Specialized help with Thermodynamics and Phase Equilibria, Geology, Metallurgy </li>
+                    <li>Specialized help with Thermodynamics and Phase Equilibria, Geology, Metallurgy</li>
                     <li>Interview and admissions coaching</li>
                     <li>Feedback on written work in science/engineering</li>
                 </ul>
@@ -356,7 +380,7 @@
             </section>
 
             <div class="contact-card">
-                <p style="font-weight: bold; margin-bottom: 10px;">Contact Information</p>
+                <p style="font-weight: bold; margin-bottom: 10px; font-size: 1.15rem;">Contact Information</p>
                 <p>Email: <a href="mailto:nandlucas99@gmail.com">nandlucas99@gmail.com</a></p>
                 <p>Phone: <a href="tel:+16138160059">+1 (613) 816-0059</a></p>
             </div>
