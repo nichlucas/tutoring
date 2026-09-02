@@ -80,20 +80,19 @@
             overflow: hidden; 
         }
 
-        .swapped-layout-section {
-            display: flex;
-            align-items: flex-end; 
-            justify-content: space-between;
-            gap: 40px;
+        /* Switched to CSS Grid for precise element ordering */
+        .hero-grid-section {
+            display: grid;
+            grid-template-columns: 1.2fr 40%;
+            gap: 0 40px; 
+            align-items: end;
             padding-top: 70px;
         }
 
-        .layout-content-left {
-            flex: 1.2; 
-            display: flex;
-            flex-direction: column;
-            color: #ffffff; 
-            padding-bottom: 90px;
+        .hero-eyebrow-container {
+            grid-column: 1;
+            grid-row: 1;
+            margin-bottom: 12px;
         }
 
         .eyebrow {
@@ -104,12 +103,18 @@
             background: var(--brand-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
             display: inline-block;
         }
 
-        .layout-content-left h2 {
-            font-size: clamp(2.2rem, 4vw, 3.4rem); /* Fluid typography scales smoothly */
+        .hero-text-container {
+            grid-column: 1;
+            grid-row: 2;
+            padding-bottom: 90px;
+            color: #ffffff;
+        }
+
+        .hero-text-container h2 {
+            font-size: clamp(2.2rem, 4vw, 3.4rem); 
             font-weight: 700; 
             line-height: 1.15;
             margin-bottom: 16px;
@@ -117,7 +122,7 @@
             letter-spacing: -1px;
         }
 
-        .layout-content-left h3 {
+        .hero-text-container h3 {
             font-size: clamp(1rem, 2vw, 1.2rem);
             color: rgba(255, 255, 255, 0.85); 
             margin-bottom: 36px;
@@ -143,8 +148,9 @@
             box-shadow: 0 12px 32px rgba(243, 76, 137, 0.45);
         }
 
-        .layout-image-right {
-            flex: 0 0 40%; 
+        .hero-image-container {
+            grid-column: 2;
+            grid-row: 1 / 3; /* Spans both the eyebrow and text rows */
             display: flex;
             justify-content: flex-end;
         }
@@ -171,14 +177,13 @@
             flex: 0 0 300px; 
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
         .graph-container iframe {
             width: 100%;
             height: 280px;
-            border-radius: 12px;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: none; /* Removed border to integrate perfectly with the site */
         }
 
         .testimonial-container {
@@ -250,11 +255,11 @@
             color: var(--text-dark);
         }
 
-        /* --- UPDATED CONTACT CARD --- */
+        /* --- CONTACT CARD --- */
         .contact-card {
             background: var(--bg-offwhite);
             color: var(--text-dark);
-            padding: 32px 32px; /* Significantly reduced height */
+            padding: 32px 32px; 
             border-radius: 12px;
             border: 1px solid #E2E8F0;
             text-align: center;
@@ -262,7 +267,6 @@
         }
 
         .contact-card h3 {
-            /* Styled exactly like the rest of the page's h3s */
             margin-top: 0;
             margin-bottom: 12px;
             font-size: 1.4rem;
@@ -282,22 +286,19 @@
         }
 
         .contact-card a:hover {
-            color: #F34C89; /* Retained the pink hover for a subtle pop */
+            color: #F34C89; 
             text-decoration: underline;
         }
 
         /* --- MOBILE ADAPTATIONS --- */
         
-        /* Tablet adjustments */
         @media (max-width: 992px) {
             .graph-container {
                 flex: 0 0 240px;
             }
         }
 
-        /* Small screen adjustments - carefully tuned to protect the layout */
         @media (max-width: 768px) {
-            /* Navigation stays side-by-side, just scales down */
             .nav-content {
                 flex-direction: row; 
             }
@@ -308,30 +309,42 @@
                 font-size: 0.9rem;
             }
 
-            /* Stack hero section on narrow phones to keep text readable */
-            .swapped-layout-section {
-                flex-direction: column;
-                padding-top: 40px;
+            /* Custom Mobile Grid Stacking */
+            .hero-grid-section {
+                grid-template-columns: 1fr;
                 text-align: center;
-                gap: 30px;
+                gap: 20px;
+                padding-top: 40px;
             }
 
-            .layout-content-left {
-                padding-bottom: 0px;
-                align-items: center;
+            /* 1. Eyebrow at the very top */
+            .hero-eyebrow-container {
+                grid-column: 1;
+                grid-row: 1;
+                margin-bottom: 0;
             }
 
-            .layout-image-right {
-                flex: 1 1 auto;
-                width: 100%;
+            /* 2. Image slots in below the eyebrow */
+            .hero-image-container {
+                grid-column: 1;
+                grid-row: 2;
                 justify-content: center;
+            }
+
+            /* 3. Main text and button drop to the bottom */
+            .hero-text-container {
+                grid-column: 1;
+                grid-row: 3;
+                padding-bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .hero-profile-pic {
                 max-height: 320px;
             }
 
-            /* Stack graph and testimonial on narrow phones */
             .graph-testimonial-section {
                 flex-direction: column;
                 padding: 50px 0;
@@ -348,7 +361,6 @@
                 border-radius: 12px;
             }
             
-            /* Gradient line shifts to top of card on mobile */
             .testimonial-container::before {
                 top: 0;
                 left: 0;
@@ -376,18 +388,25 @@
 
     <div class="hero-background">
         <div class="wrapper">
-            <section class="swapped-layout-section">
-                <div class="layout-content-left">
+            <!-- Grid container replaces old flex layout -->
+            <section class="hero-grid-section">
+                
+                <div class="hero-eyebrow-container">
                     <span class="eyebrow">Learn from a Cambridge Ph.D.</span>
+                </div>
+
+                <div class="hero-image-container">
+                    <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="hero-profile-pic">
+                </div>
+
+                <div class="hero-text-container">
                     <h2>Maths, Sciences &<br>Admissions Coaching</h2>
                     <h3>Reach your full potential with premium, personalized guidance.</h3>
                     <a href="mailto:nandlucas99@gmail.com?subject=Tutoring%20Inquiry" class="hero-cta-btn">
                         Book your consultation
                     </a>
                 </div>
-                <div class="layout-image-right">
-                    <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="hero-profile-pic">
-                </div>
+                
             </section>
         </div>
     </div> 
