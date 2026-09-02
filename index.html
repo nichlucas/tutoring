@@ -33,8 +33,7 @@
             margin-bottom: 0.5em;
         }
 
-        /* * NEW: Unified background for Header and Banner
-         */
+        /* Unified Oxford Blue background */
         .blue-header-background {
             background-color: var(--oxford-blue);
             width: 100%;
@@ -46,7 +45,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px; /* Aligns with the new wrapper width */
+            max-width: 1200px; 
             margin: 0 auto;
         }
 
@@ -83,9 +82,8 @@
             border-color: #ffffff; 
         }
 
-        /* Wrapper width increased to 1200px to fit the giant 700px graph */
         .wrapper {
-            max-width: 1200px;
+            max-width: 1000px; 
             margin: 0 auto;
             padding: 20px 20px 40px 20px;
         }
@@ -93,17 +91,16 @@
         /* Hero Layout Section */
         .swapped-layout-section {
             display: flex;
-            align-items: flex-start;
+            align-items: center; 
             gap: 40px;
-            padding: 40px 0 60px 0;
+            padding: 40px 0 35px 0; 
         }
 
         .layout-content-left {
             flex: 1; 
             display: flex;
             flex-direction: column;
-            padding-top: 50px; 
-            color: #ffffff; /* Ensures stray text stays white */
+            color: #ffffff; 
         }
 
         .layout-content-left h2 {
@@ -111,25 +108,24 @@
             font-weight: 400; 
             margin: 0;
             margin-bottom: 10px;
-            color: #ffffff; /* Changed to white for dark background */
+            color: #ffffff; 
             line-height: 1.2;
         }
 
         .layout-content-left h3 {
             font-size: 1.1rem;
-            color: var(--cambridge-blue); /* Cambridge blue pop for contrast */
+            color: var(--cambridge-blue); 
             margin: 0;
             font-weight: 400;
             line-height: 1.4;
         }
 
         .layout-content-left .inquiry-container {
-            margin-top: 140px;
+            margin-top: 30px;
             margin-bottom: 0px; 
             text-align: left; 
         }
 
-        /* Inverted Button for the blue background */
         .layout-content-left .inquiry-button {
             margin-top: 0;
             width: auto;
@@ -146,10 +142,10 @@
 
         .layout-content-left .availability-status {
             font-size: 1rem;
-            margin-top: 12px;
+            margin-top: 15px;
             margin-bottom: 0px; 
             justify-content: flex-start;
-            color: #ffffff; /* Changed to white */
+            color: #ffffff; 
         }
 
         .layout-image-right {
@@ -158,16 +154,17 @@
             justify-content: center;
         }
         
-        /* Ensures the massive embed shrinks gracefully on small screens */
-        .layout-image-right iframe {
-            max-width: 100%;
-            height: auto;
-            aspect-ratio: 1 / 1;
+        /* Swapped Profile Picture in Hero */
+        .hero-profile-pic {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
             border-radius: 5px;
+            border: 2px solid #fff;
         }
 
-        /* Profile & Testimonial Section */
-        .profile-testimonial-section {
+        /* Swapped Graph & Testimonial Section */
+        .graph-testimonial-section {
             display: flex;
             align-items: center;
             gap: 40px;
@@ -175,16 +172,14 @@
             margin-top: 20px;
         }
 
-        .profile-image-container {
+        .graph-container {
             flex: 0 0 auto;
         }
 
-        .profile-pic {
-            height: 250px;
-            width: 250px;
-            object-fit: cover;
+        /* Graph Iframe settings */
+        .graph-container iframe {
+            max-width: 100%;
             border-radius: 5px;
-            border: 2px solid #fff;
         }
 
         .testimonial-container {
@@ -256,7 +251,7 @@
         flex-direction: column;
         padding: 40px 20px;
         text-align: center;
-        gap: 20px;
+        gap: 30px;
     }
 
     .layout-image-right {
@@ -267,7 +262,6 @@
     .layout-content-left {
         text-align: center;
         align-items: center;
-        padding-top: 10px;
     }
 
     .layout-content-left h2 {
@@ -283,7 +277,7 @@
         justify-content: center;
     }
 
-    .profile-testimonial-section {
+    .graph-testimonial-section {
         flex-direction: column;
         text-align: center;
     }
@@ -339,7 +333,7 @@
     <div class="blue-header-background">
         <header class="top-nav-bar">
             <div class="site-title">
-                <h1>Nicholas Lucas, PhD</h1>
+                <h1>Dr. Nicholas Lucas</h1>
             </div>
             <nav class="nav-tabs">
                 <a href="index.html" class="tab-link active-tab">Home</a>
@@ -367,15 +361,15 @@
                 </div>
 
                 <div class="layout-image-right">
-                    <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+                    <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="hero-profile-pic">
                 </div>
                 
             </section>
         </div>
     </div> <div class="wrapper">
-        <section class="profile-testimonial-section">
-            <div class="profile-image-container">
-                <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="profile-pic">
+        <section class="graph-testimonial-section">
+            <div class="graph-container">
+                <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" width="450" height="450" style="border: none;" frameborder=0></iframe>
             </div>
             <div class="testimonial-container">
                 <p class="quote">"This is a placeholder for your testimonial. You can put a great review from a past student here to build immediate trust with visitors."</p>
