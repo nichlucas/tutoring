@@ -13,8 +13,9 @@
             --cambridge-blue: #A3C1AD;
             --text-dark: #333333;
             --text-light: #666666;
-            /* Banner set to Cambridge Blue */
+            /* Banner set exactly to the Cambridge Blue variable */
             --header-bg: var(--cambridge-blue); 
+            --header-border-color: rgba(255, 255, 255, 0.4); 
         }
 
         body {
@@ -47,8 +48,8 @@
             font-size: 1.4rem;
             letter-spacing: -1px;
             margin: 0;
-            /* Changed to Oxford Blue for readability on the light Cambridge Blue banner */
-            color: var(--oxford-blue); 
+            /* Reverted back to white */
+            color: #ffffff; 
             font-weight: 600;
         }
 
@@ -63,20 +64,20 @@
             font-size: 0.85rem; 
             text-transform: uppercase;
             letter-spacing: 1px;
-            /* Changed to Oxford Blue */
-            color: var(--oxford-blue); 
+            /* Reverted back to white */
+            color: #ffffff; 
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             transition: 0.3s;
-            border: 1px solid var(--oxford-blue); 
+            border: 1px solid var(--header-border-color); 
             border-radius: 4px;
         }
 
-        /* Inverted the active tab to stand out */
+        /* Reverted active tab back to original scheme */
         .active-tab {
-            color: #ffffff;
-            background: var(--oxford-blue);
-            border-color: var(--oxford-blue); 
+            color: var(--oxford-blue);
+            background: #ffffff;
+            border-color: #ffffff; 
         }
 
         .wrapper {
@@ -98,7 +99,6 @@
             flex: 1; 
             display: flex;
             flex-direction: column;
-            /* Added padding to push headers down to center with the image */
             padding-top: 50px; 
         }
 
@@ -120,7 +120,6 @@
         }
 
         .layout-content-left .inquiry-container {
-            /* Large margin pushes the button below the 300px placeholder image */
             margin-top: 140px;
             margin-bottom: 0px; 
             text-align: left; 
@@ -134,7 +133,6 @@
 
         .layout-content-left .availability-status {
             font-size: 1rem;
-            /* Tightened the space to tuck right under the button */
             margin-top: 8px;
             margin-bottom: 0px; 
             justify-content: flex-start;
@@ -143,20 +141,11 @@
         .layout-image-right {
             flex: 0 0 auto; 
         }
-
-        .hero-placeholder-pic {
-            height: 300px;
-            width: 300px;
-            object-fit: cover;
+        
+        /* Ensures the 500px Desmos embed shrinks gracefully on small screens */
+        .layout-image-right iframe {
+            max-width: 100%;
             border-radius: 5px;
-            border: 2px dashed #ccc; 
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-family: 'Montserrat', sans-serif;
-            /* Shadow removed */
         }
 
         /* Profile & Testimonial Section */
@@ -179,7 +168,6 @@
             object-fit: cover;
             border-radius: 5px;
             border: 2px solid #fff;
-            /* Shadow removed */
         }
 
         .testimonial-container {
@@ -256,6 +244,7 @@
 
     .layout-image-right {
         order: -1; 
+        width: 100%; /* Helps iframe take full width on mobile */
     }
 
     .layout-content-left {
@@ -269,7 +258,6 @@
     }
 
     .layout-content-left .inquiry-container {
-        /* Reset spacing for mobile */
         margin-top: 20px;
         text-align: center;
     }
@@ -308,7 +296,6 @@
     background-color: transparent;
     color: var(--oxford-blue);
     transform: translateY(-2px);
-    /* Shadow removed */
 }
 
 .availability-status {
@@ -326,11 +313,9 @@
     border: 0.5px solid #000;    
     border-radius: 50%;
     display: inline-block;
-    /* Glow shadow removed */
     animation: gentle-glow 2s ease-in-out infinite;
 }
 
-/* Glow keyframes simplified to just adjust brightness */
 @keyframes gentle-glow {
     0%, 100% {
         filter: brightness(1);
@@ -374,7 +359,7 @@
         </div>
 
         <div class="layout-image-right">
-            <img src="placeholder-image.JPG" alt="New Image Placeholder" class="hero-placeholder-pic">
+            <iframe src="https://www.desmos.com/calculator/qjea1n6fwu?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
         </div>
         
     </section>
