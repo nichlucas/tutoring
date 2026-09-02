@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nicholas Lucas | Tutoring and Mentorship</title>
+    <title>Nick Lucas, PhD | Tutoring and Mentorship</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
@@ -39,7 +39,7 @@
             width: 100%;
         }
 
-        /* MASTER GRID WRAPPER - Aligns everything to the same vertical lines */
+        /* MASTER GRID WRAPPER */
         .wrapper {
             max-width: 1050px; 
             margin: 0 auto;
@@ -90,7 +90,7 @@
         /* Hero Layout Section */
         .swapped-layout-section {
             display: flex;
-            align-items: flex-end; /* Forces the image to the bottom edge */
+            align-items: flex-end; /* Image to bottom */
             gap: 40px;
             padding: 40px 0 0 0; 
         }
@@ -100,8 +100,9 @@
             display: flex;
             flex-direction: column;
             color: #ffffff; 
-            align-self: center; /* Centers the text vertically next to the tall image */
-            padding-bottom: 30px; 
+            /* By removing align-self: center, it now stretches to the full height of the photo */
+            padding-top: 20px; 
+            padding-bottom: 15px; /* Sits exactly 15px above the bottom line */
         }
 
         .layout-content-left h2 {
@@ -121,15 +122,15 @@
             line-height: 1.4;
         }
 
-        .layout-content-left .inquiry-container {
-            margin-top: 30px;
-            margin-bottom: 0px; 
-            text-align: left; 
+        /* NEW: Action Row groups the button and availability text together */
+        .action-row {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Space between button and availability text */
+            margin-top: auto; /* This magically forces the row to the bottom of the column! */
         }
 
-        .layout-content-left .inquiry-button {
-            margin-top: 0;
-            width: auto;
+        .inquiry-button {
             display: inline-block;
             background-color: #ffffff;
             color: var(--oxford-blue);
@@ -144,20 +145,18 @@
             transition: all 0.3s ease;
         }
 
-        .layout-content-left .inquiry-button:hover {
+        .inquiry-button:hover {
             background-color: transparent;
             color: #ffffff;
         }
 
-        .layout-content-left .availability-status {
+        .availability-status {
             font-size: 1rem;
-            margin-top: 15px;
-            margin-bottom: 0px; 
-            justify-content: flex-start;
             color: #ffffff; 
             display: flex;
             align-items: center;
             gap: 10px;
+            margin: 0; /* Reset margins so it perfectly aligns with the button */
         }
 
         .layout-image-right {
@@ -166,38 +165,36 @@
             justify-content: center;
         }
         
-        /* Swapped Profile Picture in Hero */
         .hero-profile-pic {
-            height: 350px; /* Increased slightly to balance the large text */
-            width: auto; /* Lets width scale automatically */
+            height: 350px;
+            width: auto;
             object-fit: cover;
             border-radius: 5px 5px 0 0; 
             display: block; 
         }
 
-        /* Swapped Graph & Testimonial Section */
+        /* Graph & Testimonial Section - Gap eliminated */
         .graph-testimonial-section {
             display: flex;
-            align-items: center;
-            gap: 60px; /* Increased gap so they don't look crowded */
-            padding: 60px 0 40px 0; 
+            align-items: center; 
+            gap: 60px; 
+            padding: 0px 0 40px 0; /* Changed top padding to 0px */
             margin-top: 0px; 
         }
 
         .graph-container {
-            flex: 1; /* Giving flex 1 balances visual weight with the testimonial */
+            flex: 1; 
             display: flex;
             justify-content: flex-start;
         }
 
-        /* Graph Iframe settings */
         .graph-container iframe {
             max-width: 100%;
             border-radius: 5px;
         }
 
         .testimonial-container {
-            flex: 1; /* Match graph flex to ensure equal spacing */
+            flex: 1; 
             background: #f9f9f9;
             padding: 30px;
             border-left: 4px solid var(--cambridge-blue);
@@ -245,16 +242,27 @@
             padding-left: 20px;
         }
 
+        .status-circle {
+            width: 10px;
+            height: 10px;
+            background-color: #2ecc71; 
+            border: 0.5px solid #000;    
+            border-radius: 50%;
+            display: inline-block;
+            animation: gentle-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes gentle-glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
 /* Mobile Adaptations */
 @media (max-width: 768px) {
     .top-nav-bar {
         flex-direction: column;
         padding: 20px 0;
         gap: 15px;
-    }
-
-    .site-title h1 {
-        font-size: 1.4rem;
     }
 
     .nav-tabs {
@@ -280,17 +288,10 @@
         padding-bottom: 40px; 
     }
 
-    .layout-content-left h2 {
-        font-size: 1.8rem;
-    }
-
-    .layout-content-left .inquiry-container {
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .layout-content-left .availability-status {
-        justify-content: center;
+    /* Modifies action row to stack back vertically on small mobile screens */
+    .action-row {
+        flex-direction: column;
+        margin-top: 30px; 
     }
 
     .graph-testimonial-section {
@@ -299,7 +300,7 @@
         gap: 30px;
         padding: 40px 0;
     }
-    
+
     .graph-container {
         justify-content: center;
     }
@@ -307,25 +308,6 @@
     .testimonial-container {
         border-left: none;
         border-top: 4px solid var(--cambridge-blue);
-    }
-}
-
-.status-circle {
-    width: 10px;
-    height: 10px;
-    background-color: #2ecc71; 
-    border: 0.5px solid #000;    
-    border-radius: 50%;
-    display: inline-block;
-    animation: gentle-glow 2s ease-in-out infinite;
-}
-
-@keyframes gentle-glow {
-    0%, 100% {
-        filter: brightness(1);
-    }
-    50% {
-        filter: brightness(1.2);
     }
 }
     </style>
@@ -353,19 +335,18 @@
                     <h2>Academic Mentorship <br>& Premium Tutoring</h2>
                     <h3>I can help you reach your full potential in academics</h3>
                     
-                    <div class="inquiry-container">
+                    <div class="action-row">
                         <a href="mailto:nandlucas99@gmail.com?subject=Tutoring Inquiry" class="inquiry-button">
                             Book a Consultation
                         </a>
+                        <p class="availability-status">
+                            Availability: <strong>Open</strong> <span class="status-circle"></span>
+                        </p>
                     </div>
-
-                    <p class="availability-status">
-                        Availability: <strong>Open</strong> <span class="status-circle"></span>
-                    </p>
                 </div>
 
                 <div class="layout-image-right">
-                    <img src="profile-pic.JPG" alt="Dr. Nicholas Lucas" class="hero-profile-pic">
+                    <img src="profile-pic.JPG" alt="Nick Lucas, PhD" class="hero-profile-pic">
                 </div>
                 
             </section>
